@@ -53,13 +53,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabelRua" min="-2" pref="24" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabeCPF" max="32767" attributes="0"/>
                               <Component id="jLabelNome" max="32767" attributes="0"/>
@@ -75,38 +70,48 @@
                               </Group>
                               <Component id="jTextFieldNome" min="-2" pref="413" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabelBairro" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabelBairro" pref="27" max="32767" attributes="0"/>
+                              <Component id="jLabelRua" max="32767" attributes="0"/>
                               <Component id="jLabelCEP" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldBairro" pref="177" max="32767" attributes="0"/>
-                              <Component id="jTextFieldCEP" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jTextFieldCEP" min="-2" pref="184" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jTextFieldBairro" min="-2" pref="184" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Component id="jLabelCidade" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCidade" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextField1" min="-2" pref="424" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jLabelCidade" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextFieldCidade" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabelNumero" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jTextFieldNumero" min="-2" pref="82" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabelID" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextFieldID" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jTextFieldID" min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -146,7 +151,7 @@
                       <Component id="jLabelCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

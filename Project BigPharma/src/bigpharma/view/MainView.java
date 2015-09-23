@@ -5,6 +5,8 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.ClienteFisico;
+
 /**
  *
  * @author Joyce
@@ -27,6 +29,7 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItemCadClienteFisico = new javax.swing.JMenuItem();
@@ -39,24 +42,56 @@ public class MainView extends javax.swing.JFrame {
         jMenuItemConCliente = new javax.swing.JMenuItem();
         jMenuItemConFornecedor = new javax.swing.JMenuItem();
         jMenuVenda = new javax.swing.JMenu();
+        jMenuItemVenda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
+        jDesktopPane.setLayout(jDesktopPaneLayout);
+        jDesktopPaneLayout.setHorizontalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+        jDesktopPaneLayout.setVerticalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 579, Short.MAX_VALUE)
+        );
 
         jMenuCadastro.setText("Cadastro");
 
         jMenuItemCadClienteFisico.setText("Cliente Físico");
+        jMenuItemCadClienteFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadClienteFisicoActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuItemCadClienteFisico);
 
         jMenuItemCadClienteJuridico.setText("Cliente Juridico");
+        jMenuItemCadClienteJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadClienteJuridicoActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuItemCadClienteJuridico);
 
         jMenuItemCadProduto.setText("Produto");
         jMenuCadastro.add(jMenuItemCadProduto);
 
         jMenuItemCadFornecedor.setText("Fornecedor");
+        jMenuItemCadFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadFornecedorActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuItemCadFornecedor);
 
         jMenuItemCadCompra.setText("Compra");
+        jMenuItemCadCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadCompraActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuItemCadCompra);
 
         jMenuBar1.add(jMenuCadastro);
@@ -80,6 +115,15 @@ public class MainView extends javax.swing.JFrame {
         jMenuBar1.add(jMenuConsulta);
 
         jMenuVenda.setText("Venda");
+
+        jMenuItemVenda.setText("Venda");
+        jMenuItemVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVendaActionPerformed(evt);
+            }
+        });
+        jMenuVenda.add(jMenuItemVenda);
+
         jMenuBar1.add(jMenuVenda);
 
         setJMenuBar(jMenuBar1);
@@ -88,11 +132,11 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addComponent(jDesktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         setBounds(0, 0, 816, 639);
@@ -101,6 +145,36 @@ public class MainView extends javax.swing.JFrame {
     private void jMenuItemConClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemConClienteActionPerformed
+
+    private void jMenuItemCadClienteFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteFisicoActionPerformed
+        FCadastroPessoaFisica objCadastro = new FCadastroPessoaFisica();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadClienteFisicoActionPerformed
+
+    private void jMenuItemCadClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteJuridicoActionPerformed
+        FCadastroPessoaJuridica objCadastro = new FCadastroPessoaJuridica();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadClienteJuridicoActionPerformed
+
+    private void jMenuItemCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFornecedorActionPerformed
+        FCadastroPessoaJuridica objCadastro = new FCadastroPessoaJuridica();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadFornecedorActionPerformed
+
+    private void jMenuItemCadCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadCompraActionPerformed
+        FCadastroCompra objCadastro = new FCadastroCompra();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadCompraActionPerformed
+
+    private void jMenuItemVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVendaActionPerformed
+        FCadastroVenda objCadastro = new FCadastroVenda();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +212,7 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuConsulta;
@@ -149,6 +224,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemConCliente;
     private javax.swing.JMenuItem jMenuItemConComra;
     private javax.swing.JMenuItem jMenuItemConFornecedor;
+    private javax.swing.JMenuItem jMenuItemVenda;
     private javax.swing.JMenu jMenuVenda;
     // End of variables declaration//GEN-END:variables
 }
