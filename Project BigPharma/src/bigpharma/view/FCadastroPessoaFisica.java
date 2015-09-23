@@ -48,14 +48,16 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
         jTextFieldCidade = new javax.swing.JTextField();
         jTextFieldCEP = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButtonSalvar = new javax.swing.JButton();
-        jButtonNovo = new javax.swing.JButton();
-        jButtonSair = new javax.swing.JButton();
-        jButtonEditar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jButtonNovo = new javax.swing.JButton();
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonFechar = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Cadastro Pessoa Física");
 
         jLabelNome.setText("Nome");
@@ -171,30 +173,30 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCEP)
                     .addComponent(jTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jButtonSalvar.setText("Salvar");
-
-        jButtonNovo.setText("Novo");
-
-        jButtonSair.setText("Sair");
+        jButtonExcluir.setText("Excluir");
 
         jButtonEditar.setText("Editar");
 
-        jButtonExcluir.setText("Excluir");
+        jButtonNovo.setText("Novo");
+
+        jButtonSalvar.setText("Salvar");
+
+        jButtonFechar.setText("Fechar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButtonExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonSair)
+                .addComponent(jButtonFechar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonNovo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -204,14 +206,13 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 22, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSalvar)
-                    .addComponent(jButtonNovo)
-                    .addComponent(jButtonSair)
+                    .addComponent(jButtonExcluir)
                     .addComponent(jButtonEditar)
-                    .addComponent(jButtonExcluir))
-                .addContainerGap())
+                    .addComponent(jButtonNovo)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonFechar)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,7 +227,7 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -247,8 +248,8 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
+    private javax.swing.JButton jButtonFechar;
     private javax.swing.JButton jButtonNovo;
-    private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabeCPF;
     private javax.swing.JLabel jLabelBairro;
