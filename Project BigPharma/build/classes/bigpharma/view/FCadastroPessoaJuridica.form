@@ -75,7 +75,7 @@
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabelCidade" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldCidade" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldCidade" pref="225" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -91,17 +91,16 @@
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jTextFieldCNPJ" min="-2" pref="159" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabelTelefone" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldTelefone" min="-2" pref="177" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldTelefone" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jTextFieldRazaoSocial" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -143,7 +142,7 @@
                       <Component id="jTextFieldCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace pref="56" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelRua" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelNumero" alignment="3" min="-2" max="-2" attributes="0"/>
