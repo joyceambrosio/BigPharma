@@ -10,26 +10,21 @@ package bigpharma.model;
  * @author Joyce
  */
 public class ClienteJuridico extends Cliente {
-
-    public ClienteJuridico(int documento, int id, String nome, String endereco, int telefone) {
-        super(documento, id, nome, endereco, telefone);
+   
+    public ClienteJuridico(int id, String nome, String documento, String telefone, String rua, String bairro, String numero, String cep) {
+        this.id = id;
+        this.nome = nome;
+        this.documento = documento;
+        this.telefone = telefone;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.numero = numero;
+        this.cep = cep;
+        this.limiteVenda = 5000.0;
     }
-
-    @Override
-    double getLimiteVenda() {
-        return 5000.0;
+   
+    public double getLimiteVenda(){
+        return this.limiteVenda;
     }
     
-    @Override
-    public String toString() {
-       return "Empresa: \n" +
-               " Nome: " + nome +
-               "\n Id:" + id +
-               "\n CNPJ:" + documento +
-               "\n Endereco:" + endereco +
-               "\n Telefone:" + telefone +
-               "\n Limte Venda" + getLimiteVenda()+
-               "\n________________________________"
-               ;
-    }
 }
