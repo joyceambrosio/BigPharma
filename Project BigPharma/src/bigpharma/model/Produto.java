@@ -5,35 +5,26 @@
  */
 package bigpharma.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  *
  * @author Joyce
  */
-public class Produto {
+public class Produto implements Serializable{
  
-    // tem que mexer nessa classe
-    
     private int id;
     private String nome;
     private double preco;
-    private double qtdeEstoque;
-    private ArrayList<Produto> componentes;
+    private double qtdeEstoque=0;
 
-    public Produto(int id, String nome, double preco, double qtdeEstoque) {
+    public Produto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public Produto(int id, String nome, double preco) {
         this.id = id;
         this.nome = nome;
-        this.preco = preco;
-        this.qtdeEstoque = qtdeEstoque;
-
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setPreco(double preco) {
         this.preco = preco;
     }
 
@@ -45,37 +36,36 @@ public class Produto {
         return nome;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+    
+
+    public void setQtdeEstoque(double qtdeEstoque) {
+        this.qtdeEstoque =+ qtdeEstoque;
+    }
+
     public double getQtdeEstoque() {
         return qtdeEstoque;
     }
-    
-    // por exemplo, fica estranho vc voltar o preco sem a quantidade de
-    // componentes qeu foi utilizadapra fazer esse produto
-    
-    public double getPreco(){
-        double preco = 0;
-        for(Produto p: componentes){
-            preco = p.preco;
-        }
-        return this.preco+preco;
-    }    
-    
 
-    public void addComponente(Produto produto){
-        componentes.add(produto);
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
     
-    public void removeComponente(Produto produto){
-        componentes.remove(produto);
+    @Override
+    public String toString() {
+       return nome;
     }
     
-    public void decrementaEstoque(double qtdEstoque){
-        //Decrementa estoque
-    }
-    
-    public void incrementaEstoque(double qtdEstoque){
-        //Incrementa estoque
-    }
     
     
     

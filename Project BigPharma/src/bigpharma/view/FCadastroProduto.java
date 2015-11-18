@@ -5,6 +5,8 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.Produto;
+
 /**
  *
  * @author Joyce
@@ -12,8 +14,10 @@ package bigpharma.view;
 public class FCadastroProduto extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FCadastroProduto
+     * Creates new form FCadastroClienteJuridico
      */
+    Produto produto;
+
     public FCadastroProduto() {
         initComponents();
     }
@@ -27,141 +31,269 @@ public class FCadastroProduto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPane1 = new javax.swing.JPanel();
-        jLabelNome = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldNome = new javax.swing.JTextField();
-        jTextFieldPreco = new javax.swing.JTextField();
-        jTextFieldQtdProduto = new javax.swing.JTextField();
-        jLabelQuantidade = new javax.swing.JLabel();
-        jPane2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelNome = new javax.swing.JLabel();
+        jLabeCPF = new javax.swing.JLabel();
+        jLabelID = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldID = new javax.swing.JTextField();
+        jTextFieldPreco = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jButtonSalvarModificacao = new javax.swing.JButton();
+        jButtonExcluir = new javax.swing.JButton();
 
-        setClosable(true);
-        setIconifiable(true);
-        setTitle("Cadastro de Produto");
-        setToolTipText("");
+        jButton1.setText("jButton1");
 
-        jLabelNome.setText("Nome do Produto");
+        setTitle("Cadastro Produto");
 
-        jLabel2.setText("Preço");
+        jLabelNome.setText("Nome");
 
-        jLabelQuantidade.setText("Quantidade");
+        jLabeCPF.setText("Preço");
 
-        javax.swing.GroupLayout jPane1Layout = new javax.swing.GroupLayout(jPane1);
-        jPane1.setLayout(jPane1Layout);
-        jPane1Layout.setHorizontalGroup(
-            jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPane1Layout.createSequentialGroup()
+        jLabelID.setText("ID");
+
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabelQuantidade))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldNome)
-                    .addGroup(jPane1Layout.createSequentialGroup()
-                        .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldQtdProduto)
-                            .addComponent(jTextFieldPreco, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabeCPF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNome)
+                    .addComponent(jLabelID)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabeCPF)
+                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+
+        jButtonEditar.setText("Editar");
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
+
+        jButtonSalvarModificacao.setText("Salvar Modificações");
+        jButtonSalvarModificacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarModificacaoActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluir.setText("Excluir");
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonExcluir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalvarModificacao)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonEditar)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSair)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSalvar)
                 .addContainerGap())
         );
-        jPane1Layout.setVerticalGroup(
-            jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPane1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNome)
-                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldQtdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelQuantidade))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-
-        jButton1.setText("Salvar");
-
-        jButton2.setText("Fechar");
-
-        jButton3.setText("Novo");
-
-        jButton4.setText("Editar");
-
-        jButton5.setText("Excluir");
-
-        javax.swing.GroupLayout jPane2Layout = new javax.swing.GroupLayout(jPane2);
-        jPane2.setLayout(jPane2Layout);
-        jPane2Layout.setHorizontalGroup(
-            jPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1))
-        );
-        jPane2Layout.setVerticalGroup(
-            jPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPane2Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addGap(25, 25, 25))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonSair)
+                    .addComponent(jButtonEditar)
+                    .addComponent(jButtonSalvarModificacao)
+                    .addComponent(jButtonExcluir))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        int id = new Integer(this.jTextFieldID.getText());
+        double preco = new Double(this.jTextFieldPreco.getText().replace(",", "."));
+        String nome = this.jTextFieldNome.getText();
+
+        ((MainView) MainView.getFrames()[0]).produtos.add(new Produto(id, nome, preco));
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+        this.setjTextFieldsEnable();
+        this.setjButtonSalvarModificacaoTrue();
+    }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
+        //((MainView) MainView.getFrames()[0]).produtos.remove(produto);
+        produto.setId(new Integer(this.jTextFieldID.getText()));
+        produto.setNome(this.jTextFieldNome.getText());
+        produto.setPreco(new Double(this.jTextFieldPreco.getText().replace(",", ".")));
+
+        //((MainView) MainView.getFrames()[0]).produtos.add(new Produto(id, nome, preco));
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        boolean resp=false;
+        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
+            for(int j=0;j<((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().size();j++){
+            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().get(j).getNome());
+        
+            }
+            for(int j=0;j<((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().size();j++){
+            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().get(j).getNome());
+        
+            }
+        }
+        if(resp==false){
+            ((MainView) MainView.getFrames()[0]).produtos.remove(produto);
+        }
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    public void setjTextFieldID(int id) {
+        this.jTextFieldID.setText(Integer.toString(id));
+    }
+
+    public void setjTextFieldNome(String nome) {
+        this.jTextFieldNome.setText(nome);
+    }
+
+    public void setjTextFieldPreco(double preco) {
+        this.jTextFieldPreco.setText(Double.toString(preco));
+    }
+
+    public void setjButtonSalvarFalse() {
+        this.jButtonSalvar.setVisible(false);
+    }
+
+    public void setjButtonSalvarModificacaoTrue() {
+        this.jButtonSalvarModificacao.setVisible(true);
+    }
+
+    public void setjButtonSalvarModificacaoFalse() {
+        this.jButtonSalvarModificacao.setVisible(false);
+    }
+
+    public void setjButtonEditarFalse() {
+        this.jButtonEditar.setVisible(false);
+    }
+
+    public void setjTextFieldsUnable() {
+        this.jTextFieldID.setEditable(false);
+        this.jTextFieldNome.setEditable(false);
+        this.jTextFieldPreco.setEditable(false);
+    }
+
+    public void setjTextFieldsEnable() {
+        this.jTextFieldID.setEditable(true);
+        this.jTextFieldNome.setEditable(true);
+        this.jTextFieldPreco.setEditable(true);
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    
+    public void setjButtonExcluirFalse() {
+        this.jButtonExcluir.setVisible(false);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonExcluir;
+    private javax.swing.JButton jButtonSair;
+    private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JButton jButtonSalvarModificacao;
+    private javax.swing.JLabel jLabeCPF;
+    private javax.swing.JLabel jLabelID;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JLabel jLabelQuantidade;
-    private javax.swing.JPanel jPane1;
-    private javax.swing.JPanel jPane2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldPreco;
-    private javax.swing.JTextField jTextFieldQtdProduto;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,7 +9,7 @@
     </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="title" type="java.lang.String" value="Cadastro Pessoa Jur&#xed;dica"/>
+    <Property name="title" type="java.lang.String" value="Cadastro Fornecedor"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>

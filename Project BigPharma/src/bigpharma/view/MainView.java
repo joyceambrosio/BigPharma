@@ -5,7 +5,14 @@
  */
 package bigpharma.view;
 
-import bigpharma.model.ClienteFisico;
+import BD.Serializador;
+import bigpharma.model.Pessoa;
+import bigpharma.model.Compra;
+import bigpharma.model.PessoaJuridico;
+import bigpharma.model.PessoaFisico;
+import bigpharma.model.Produto;
+import bigpharma.model.Venda;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,6 +26,12 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
     }
+    public ArrayList<Pessoa> clientes = new ArrayList();
+    public ArrayList<Compra> compras = new ArrayList();
+    public ArrayList<Produto> produtos = new ArrayList();
+    public ArrayList<Venda> vendas = new ArrayList();
+    public ArrayList<PessoaJuridico> fornecedores = new ArrayList();
+    public ArrayList<PessoaFisico> funcionarios = new ArrayList();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,13 +49,19 @@ public class MainView extends javax.swing.JFrame {
         jMenuItemCadClienteJuridico = new javax.swing.JMenuItem();
         jMenuItemCadProduto = new javax.swing.JMenuItem();
         jMenuItemCadFornecedor = new javax.swing.JMenuItem();
-        jMenuItemCadCompra = new javax.swing.JMenuItem();
+        jMenuItemFuncionario = new javax.swing.JMenuItem();
         jMenuConsulta = new javax.swing.JMenu();
         jMenuItemConComra = new javax.swing.JMenuItem();
         jMenuItemConCliente = new javax.swing.JMenuItem();
         jMenuItemConFornecedor = new javax.swing.JMenuItem();
+        jMenuItemConProduto = new javax.swing.JMenuItem();
+        jMenuItemConFuncionario = new javax.swing.JMenuItem();
         jMenuVenda = new javax.swing.JMenu();
         jMenuItemVenda = new javax.swing.JMenuItem();
+        jMenuItemCadCompra = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItemSalvar = new javax.swing.JMenuItem();
+        jMenuItemCarregar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +95,11 @@ public class MainView extends javax.swing.JFrame {
         jMenuCadastro.add(jMenuItemCadClienteJuridico);
 
         jMenuItemCadProduto.setText("Produto");
+        jMenuItemCadProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadProdutoActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuItemCadProduto);
 
         jMenuItemCadFornecedor.setText("Fornecedor");
@@ -86,13 +110,13 @@ public class MainView extends javax.swing.JFrame {
         });
         jMenuCadastro.add(jMenuItemCadFornecedor);
 
-        jMenuItemCadCompra.setText("Compra");
-        jMenuItemCadCompra.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemFuncionario.setText("Funcionário");
+        jMenuItemFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemCadCompraActionPerformed(evt);
+                jMenuItemFuncionarioActionPerformed(evt);
             }
         });
-        jMenuCadastro.add(jMenuItemCadCompra);
+        jMenuCadastro.add(jMenuItemFuncionario);
 
         jMenuBar1.add(jMenuCadastro);
 
@@ -110,11 +134,32 @@ public class MainView extends javax.swing.JFrame {
         jMenuConsulta.add(jMenuItemConCliente);
 
         jMenuItemConFornecedor.setText("Fornecedor");
+        jMenuItemConFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConFornecedorActionPerformed(evt);
+            }
+        });
         jMenuConsulta.add(jMenuItemConFornecedor);
+
+        jMenuItemConProduto.setText("Produto");
+        jMenuItemConProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConProdutoActionPerformed(evt);
+            }
+        });
+        jMenuConsulta.add(jMenuItemConProduto);
+
+        jMenuItemConFuncionario.setText("Funcionário");
+        jMenuItemConFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenuConsulta.add(jMenuItemConFuncionario);
 
         jMenuBar1.add(jMenuConsulta);
 
-        jMenuVenda.setText("Venda");
+        jMenuVenda.setText("Transações");
 
         jMenuItemVenda.setText("Venda");
         jMenuItemVenda.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +169,35 @@ public class MainView extends javax.swing.JFrame {
         });
         jMenuVenda.add(jMenuItemVenda);
 
+        jMenuItemCadCompra.setText("Compra");
+        jMenuItemCadCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadCompraActionPerformed(evt);
+            }
+        });
+        jMenuVenda.add(jMenuItemCadCompra);
+
         jMenuBar1.add(jMenuVenda);
+
+        jMenu1.setText("Arquivo");
+
+        jMenuItemSalvar.setText("Salvar Modificações em Arquivo");
+        jMenuItemSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalvarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemSalvar);
+
+        jMenuItemCarregar.setText("Carregar Arquivos");
+        jMenuItemCarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCarregarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCarregar);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,29 +215,46 @@ public class MainView extends javax.swing.JFrame {
         setBounds(0, 0, 816, 639);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jMenuItemConClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConClienteActionPerformed
-        // TODO add your handling code here:
+        FCadastroPessoaFisica objCadastro2 = new FCadastroPessoaFisica();
+        this.jDesktopPane.add(objCadastro2);
+        FCadastroPessoaJuridica objCadastro3 = new FCadastroPessoaJuridica();
+        this.jDesktopPane.add(objCadastro3);
+        FConsultaCliente objCadastro = new FConsultaCliente(objCadastro2, objCadastro3);
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItemConClienteActionPerformed
 
     private void jMenuItemCadClienteFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteFisicoActionPerformed
         FCadastroPessoaFisica objCadastro = new FCadastroPessoaFisica();
         this.jDesktopPane.add(objCadastro);
+        objCadastro.setjButtonEditarFalse();
+        objCadastro.setjButtonSalvarModificacaoFalse();
+        objCadastro.setjButtonExcluirFalse();
         objCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadClienteFisicoActionPerformed
 
     private void jMenuItemCadClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteJuridicoActionPerformed
         FCadastroPessoaJuridica objCadastro = new FCadastroPessoaJuridica();
         this.jDesktopPane.add(objCadastro);
+        objCadastro.setjButtonEditarFalse();
+        objCadastro.setjButtonSalvarModificacaoFalse();
+        objCadastro.setjButtonExcluirFalse();
         objCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadClienteJuridicoActionPerformed
 
     private void jMenuItemCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFornecedorActionPerformed
-        FCadastroPessoaJuridica objCadastro = new FCadastroPessoaJuridica();
+        FCadastroFornecedor objCadastro = new FCadastroFornecedor();
         this.jDesktopPane.add(objCadastro);
+        objCadastro.setjButtonEditarFalse();
+        objCadastro.setjButtonSalvarModificacaoFalse();
+        objCadastro.setjButtonExcluirFalse();
         objCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadFornecedorActionPerformed
 
     private void jMenuItemCadCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadCompraActionPerformed
+
         FCadastroCompra objCadastro = new FCadastroCompra();
         this.jDesktopPane.add(objCadastro);
         objCadastro.setVisible(true);
@@ -175,6 +265,69 @@ public class MainView extends javax.swing.JFrame {
         this.jDesktopPane.add(objCadastro);
         objCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItemVendaActionPerformed
+
+    private void jMenuItemCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutoActionPerformed
+        FCadastroProduto objCadastro = new FCadastroProduto();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setjButtonEditarFalse();
+        objCadastro.setjButtonSalvarModificacaoFalse();
+        objCadastro.setjButtonExcluirFalse();
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadProdutoActionPerformed
+
+    private void jMenuItemConProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConProdutoActionPerformed
+        FCadastroProduto objCadastro3 = new FCadastroProduto();
+        this.jDesktopPane.add(objCadastro3);
+        FConsultaProduto objCadastro = new FConsultaProduto(objCadastro3);
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConProdutoActionPerformed
+
+    private void jMenuItemConFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFornecedorActionPerformed
+        FCadastroFornecedor objCadastro3 = new FCadastroFornecedor();
+        this.jDesktopPane.add(objCadastro3);
+        FConsultaFornecedor objCadastro = new FConsultaFornecedor(objCadastro3);
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConFornecedorActionPerformed
+
+    private void jMenuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFuncionarioActionPerformed
+        FCadastroFuncionario objCadastro = new FCadastroFuncionario();
+        this.jDesktopPane.add(objCadastro);
+        objCadastro.setjButtonEditarFalse();
+        objCadastro.setjButtonSalvarModificacaoFalse();
+        objCadastro.setjButtonExcluirFalse();
+        objCadastro.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFuncionarioActionPerformed
+
+    private void jMenuItemConFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFuncionarioActionPerformed
+        FCadastroFuncionario objCadastro = new FCadastroFuncionario();
+        this.jDesktopPane.add(objCadastro);
+        FConsultaFuncionario objCadastro2 = new FConsultaFuncionario(objCadastro);
+        this.jDesktopPane.add(objCadastro2);
+        objCadastro2.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConFuncionarioActionPerformed
+
+    private void jMenuItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalvarActionPerformed
+        Serializador s = new Serializador();
+        s.serializaProdutos(produtos);
+        s.serializaClientes(clientes);
+        s.serializaCompras(compras);
+        s.serializaFornecedores(fornecedores);
+        s.serializaFuncionarios(funcionarios);
+        s.serializaProdutos(produtos);
+        s.serializaVendas(vendas);
+    }//GEN-LAST:event_jMenuItemSalvarActionPerformed
+
+    private void jMenuItemCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCarregarActionPerformed
+        Serializador s = new Serializador();
+        produtos = s.deserializaProdutos();
+        clientes = s.deserializaClientes();
+        funcionarios = s.deserializaFuncionarios();
+        fornecedores = s.deserializaFornecedores();
+        compras = s.deserializaCompras();
+        vendas = s.deserializaVendas();
+    }//GEN-LAST:event_jMenuItemCarregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,12 +360,15 @@ public class MainView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainView().setVisible(true);
+                //serializa
+                //Serializador s = new Serializador();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuConsulta;
@@ -221,9 +377,14 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadCompra;
     private javax.swing.JMenuItem jMenuItemCadFornecedor;
     private javax.swing.JMenuItem jMenuItemCadProduto;
+    private javax.swing.JMenuItem jMenuItemCarregar;
     private javax.swing.JMenuItem jMenuItemConCliente;
     private javax.swing.JMenuItem jMenuItemConComra;
     private javax.swing.JMenuItem jMenuItemConFornecedor;
+    private javax.swing.JMenuItem jMenuItemConFuncionario;
+    private javax.swing.JMenuItem jMenuItemConProduto;
+    private javax.swing.JMenuItem jMenuItemFuncionario;
+    private javax.swing.JMenuItem jMenuItemSalvar;
     private javax.swing.JMenuItem jMenuItemVenda;
     private javax.swing.JMenu jMenuVenda;
     // End of variables declaration//GEN-END:variables

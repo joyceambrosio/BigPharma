@@ -12,14 +12,14 @@ import bigpharma.model.Endereco;
  *
  * @author Joyce
  */
-public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
+public class FCadastroFuncionario extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FCadastroClienteJuridico
      */
     PessoaFisico pessoa;
 
-    public FCadastroPessoaFisica() {
+    public FCadastroFuncionario() {
         initComponents();
     }
 
@@ -61,7 +61,7 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
 
         jButton1.setText("jButton1");
 
-        setTitle("Cadastro Pessoa Física");
+        setTitle("Cadastro Funcionário");
 
         jLabelNome.setText("Nome");
 
@@ -284,7 +284,7 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
         String cidade = this.jTextFieldCidade.getText();
         int cep = new Integer(this.jTextFieldCEP.getText());
 
-        ((MainView) MainView.getFrames()[0]).clientes.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
+        ((MainView) MainView.getFrames()[0]).funcionarios.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -298,7 +298,7 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
-        //((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
+        //((MainView) MainView.getFrames()[0]).funcionarios.remove(pessoa);
         pessoa.setId(new Integer(this.jTextFieldID.getText())) ;
         pessoa.setDocumento(new Integer(this.jTextFieldCNPJ.getText()));
         pessoa.setNome(this.jTextFieldNome.getText());
@@ -311,17 +311,17 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
         pessoa.getEndereco().setNum(new Integer(this.jTextFieldNumero.getText()));
         pessoa.getEndereco().setRua(this.jTextFieldRua.getText());
 
-        //((MainView) MainView.getFrames()[0]).clientes.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
+        //((MainView) MainView.getFrames()[0]).funcionarios.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
        boolean resp=false;
         for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getNome());
+            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).vendas.get(i).getFuncionario().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getFuncionario().getNome());
         }
         if(resp==false){
-            ((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
+            ((MainView) MainView.getFrames()[0]).funcionarios.remove(pessoa);
         }
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
@@ -380,7 +380,7 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
     public void setjButtonExcluirFalse() {
         this.jButtonExcluir.setVisible(false);
     }
-    
+
     public void setjTextFieldsUnable() {
         this.jTextFieldID.setEditable(false);
         this.jTextFieldNome.setEditable(false);
