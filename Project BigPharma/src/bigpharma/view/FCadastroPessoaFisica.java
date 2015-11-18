@@ -7,12 +7,13 @@ package bigpharma.view;
 
 import bigpharma.model.PessoaFisico;
 import bigpharma.model.Endereco;
+import javax.swing.JButton;
 
 /**
  *
  * @author Joyce
  */
-public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
+public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
 
     /**
      * Creates new form FCadastroClienteJuridico
@@ -409,6 +410,33 @@ public class FCadastroPessoaFisica extends javax.swing.JInternalFrame {
     public void setPessoa(PessoaFisico pessoa) {
         this.pessoa = pessoa;
     }
+
+    @Override
+    public JButton getjButtonEditar() {
+        return jButtonEditar;
+    }
+
+    @Override
+    public JButton getjButtonExcluir() {
+        return jButtonExcluir;
+    }
+
+    @Override
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    @Override
+    public JButton getjButtonSalvar() {
+        return jButtonSalvar;
+    }
+
+    @Override
+    public JButton getjButtonSalvarModificacao() {
+        return jButtonSalvarModificacao;
+    }
+    
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
