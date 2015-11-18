@@ -16,13 +16,13 @@ import java.util.Date;
  */
 public class Venda {
     private int idVenda;
-    private Cliente cliente;
+    private Pessoa cliente;
     private Date data;
     private double desconto;
-    private Funcionario vendedor;
+    private Pessoa vendedor;
     private ArrayList<VendaItem> produtos;
 
-    public Venda(Cliente cliente, double desconto, Funcionario vendedor) {
+    public Venda(Pessoa cliente, double desconto, Pessoa vendedor) {
         this.cliente = cliente;
         this.data = Date.from(Instant.EPOCH);
         this.desconto = desconto;
@@ -33,7 +33,7 @@ public class Venda {
         this.idVenda = idVenda;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Pessoa cliente) {
         this.cliente = cliente;
     }
 
@@ -45,7 +45,7 @@ public class Venda {
         this.desconto = desconto;
     }
 
-    public void setVendedor(Funcionario vendedor) {
+    public void setVendedor(Pessoa vendedor) {
         this.vendedor = vendedor;
     }
 
@@ -53,7 +53,7 @@ public class Venda {
         return idVenda;
     }
 
-    public Cliente getCliente() {
+    public Pessoa getCliente() {
         return cliente;
     }
 
@@ -65,7 +65,7 @@ public class Venda {
         return desconto;
     }
 
-    public Funcionario getVendedor() {
+    public Pessoa getVendedor() {
         return vendedor;
     }
     

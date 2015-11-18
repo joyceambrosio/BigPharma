@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroFornecedor.java</file>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroFuncionario.java</file>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroPessoaJuridica.java</file>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroCompra.java</file>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroPessoaFisica.java</file>
-            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/view/FCadastroProduto.java</file>
+            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/model/Pessoa.java</file>
+            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/model/ClienteFisico.java</file>
+            <file>file:/C:/Users/Adeline/Documents/GitRepos/BigPharma/Project%20BigPharma/src/bigpharma/model/Cliente.java</file>
         </group>
     </open-files>
 </project-private>
