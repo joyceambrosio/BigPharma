@@ -300,7 +300,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
         //((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        pessoa.setId(new Integer(this.jTextFieldID.getText())) ;
+        //pessoa.setId(new Integer(this.jTextFieldID.getText())) ;
         pessoa.setDocumento(new Integer(this.jTextFieldCNPJ.getText()));
         pessoa.setNome(this.jTextFieldNome.getText());
         //pessoa.setRazaoSocial(this.jTextFieldRazaoSocial.getText());

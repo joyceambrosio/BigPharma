@@ -192,7 +192,7 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
         double preco = new Double(this.jTextFieldPreco.getText().replace(",", "."));
         String nome = this.jTextFieldNome.getText();
 
-        ((MainView) MainView.getFrames()[0]).produtos.add(new Produto(id, nome, preco));
+        ((MainView) MainView.getFrames()[0]).produtos.add(new Produto(nome, preco));
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -207,7 +207,7 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
         //((MainView) MainView.getFrames()[0]).produtos.remove(produto);
-        produto.setId(new Integer(this.jTextFieldID.getText()));
+        //produto.setId(new Integer(this.jTextFieldID.getText()));
         produto.setNome(this.jTextFieldNome.getText());
         produto.setPreco(new Double(this.jTextFieldPreco.getText().replace(",", ".")));
 
@@ -218,12 +218,12 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
         boolean resp=false;
         for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            for(int j=0;j<((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().size();j++){
-            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getVendaItems().get(j).getNome());
+            for(int j=0;j<((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().size();j++){
+            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().get(j).getNome());
         
             }
-            for(int j=0;j<((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().size();j++){
-            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getCompraItems().get(j).getNome());
+            for(int j=0;j<((MainView) MainView.getFrames()[0]).compras.get(i).getItems().size();j++){
+            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getItems().get(j).getNome());
         
             }
         }

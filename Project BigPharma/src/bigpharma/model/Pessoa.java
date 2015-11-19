@@ -11,23 +11,22 @@ import java.io.Serializable;
  *
  * @author Joyce
  */
-public abstract class Pessoa implements Serializable{
+public abstract class Pessoa extends AbsModel implements Serializable {
+
     protected int documento;
     protected int id;
     protected String nome;
     protected Endereco endereco;
     protected int telefone;
     protected double limiteVenda;
-    
+
     abstract double getLimiteVenda();
 
-    public Pessoa(int documento, int id, String nome, Endereco endereco, int telefone) {
+    public Pessoa(int documento, String nome, Endereco endereco, int telefone) {
         this.documento = documento;
-        this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.limiteVenda = limiteVenda;
     }
 
     public String getNome() {
@@ -36,10 +35,6 @@ public abstract class Pessoa implements Serializable{
 
     public int getDocumento() {
         return documento;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public Endereco getEndereco() {
@@ -52,10 +47,6 @@ public abstract class Pessoa implements Serializable{
 
     public void setDocumento(int documento) {
         this.documento = documento;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setNome(String nome) {
@@ -74,12 +65,7 @@ public abstract class Pessoa implements Serializable{
         this.limiteVenda = limiteVenda;
     }
 
-    
-    
-
     @Override
     abstract public String toString();
-    
-        
-       
+
 }

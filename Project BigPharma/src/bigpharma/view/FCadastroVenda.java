@@ -374,11 +374,11 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         for (int i = 0; i < ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
 
             newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
-            for (int j = 0; j < venda.getVendaItems().size(); j++) {
-                resp = newProduto.getNome().equals(this.venda.getVendaItems().get(j).getNome());
+            for (int j = 0; j < venda.getItems().size(); j++) {
+                resp = newProduto.getNome().equals(this.venda.getItems().get(j).getNome());
 
                 if (resp) {
-                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() - this.venda.getVendaItems().get(j).getQtdeEstoque());
+                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() - this.venda.getItems().get(j).getQtdeEstoque());
                 }
             }
         }

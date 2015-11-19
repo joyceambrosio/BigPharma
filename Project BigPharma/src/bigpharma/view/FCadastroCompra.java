@@ -319,11 +319,11 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
         for (int i = 0; i < ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
 
             newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
-            for (int j = 0; j < compra.getCompraItems().size(); j++) {
-                resp = newProduto.getNome().equals(this.compra.getCompraItems().get(j).getNome());
+            for (int j = 0; j < compra.getItems().size(); j++) {
+                resp = newProduto.getNome().equals(this.compra.getItems().get(j).getNome());
 
                 if (resp) {
-                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() + this.compra.getCompraItems().get(j).getQtdeEstoque());
+                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() + this.compra.getItems().get(j).getQtdeEstoque());
                 }
             }
         }

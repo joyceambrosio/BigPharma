@@ -12,7 +12,7 @@ package bigpharma.model;
 public class PessoaFisico extends Pessoa{
     
     public PessoaFisico(int documento, int id, String nome, Endereco endereco, int telefone) {
-        super(documento, id, nome, endereco, telefone);
+        super(documento, nome, endereco, telefone);
     }
 
     @Override

@@ -5,30 +5,14 @@
  */
 package bigpharma.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
 /**
  *
  * @author Adeline
  */
-public class Venda implements Serializable{
+public class Venda extends Transacao {
+
     private PessoaFisico funcionario = null;
     private Pessoa cliente = null;
-    ArrayList<Produto> vendaItems;
-
-   
-    public Venda() {
-         vendaItems = new ArrayList();
-    }
-    
-    public void add(Produto produto){
-        this.vendaItems.add(produto); 
-    }
-    
-    public void remove(Produto produto){
-        this.vendaItems.remove(produto); 
-    }
 
     public void setFuncionario(PessoaFisico funcionario) {
         this.funcionario = funcionario;
@@ -46,14 +30,4 @@ public class Venda implements Serializable{
         return cliente;
     }
 
-    public ArrayList<Produto> getVendaItems() {
-        return vendaItems;
-    }
-
-    public void setVendaItems(ArrayList<Produto> vendaItems) {
-        this.vendaItems = vendaItems;
-    }
-
-    
-    
 }

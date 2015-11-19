@@ -5,11 +5,13 @@
  */
 package bigpharma.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Adeline
  */
-public abstract class AbsModel {
+public abstract class AbsModel implements Serializable{
 
     private int id;
 

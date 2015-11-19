@@ -5,7 +5,7 @@
  */
 package bigpharma.presenter;
 
-import bigpharma.view.AbsViewCadastro;
+import bigpharma.view.AbsViewCadastroItem;
 
 /**
  *
@@ -13,7 +13,7 @@ import bigpharma.view.AbsViewCadastro;
  */
 public abstract class AbsPresenterCadastroItem extends AbsPresenterCadastro{
 
-    public AbsPresenterCadastroItem(AbsViewCadastro cadastro) {
+    public AbsPresenterCadastroItem(AbsViewCadastroItem cadastro) {
         super(cadastro);
     }
     

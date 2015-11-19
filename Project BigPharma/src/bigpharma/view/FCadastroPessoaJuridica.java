@@ -310,7 +310,7 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
         String cidade = this.jTextFieldCidade.getText();
         int cep = new Integer(this.jTextFieldCEP.getText());
 
-        ((MainView) MainView.getFrames()[0]).clientes.add(new PessoaJuridico(cnpj, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
+        ((MainView) MainView.getFrames()[0]).clientes.add(new PessoaJuridico(cnpj, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -321,7 +321,7 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
         //((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        pessoa.setId(new Integer(this.jTextFieldID.getText()));
+        //pessoa.setId(new Integer(this.jTextFieldID.getText()));
         pessoa.setDocumento(new Integer(this.jTextFieldCNPJ.getText()));
         pessoa.setNome(this.jTextFieldNomeFantasia.getText());
         pessoa.setRazaoSocial(this.jTextFieldRazaoSocial.getText());

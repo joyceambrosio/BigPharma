@@ -13,8 +13,8 @@ public class PessoaJuridico extends Pessoa {
 
     private String razaoSocial;
 
-    public PessoaJuridico(int documento, int id, String nome, Endereco endereco, int telefone, String razaoSocial) {
-        super(documento, id, nome, endereco, telefone);
+    public PessoaJuridico(int documento, String nome, Endereco endereco, int telefone, String razaoSocial) {
+        super(documento, nome, endereco, telefone);
         this.razaoSocial = razaoSocial;
     }
 

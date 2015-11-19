@@ -5,16 +5,13 @@
  */
 package bigpharma.presenter;
 
-import bigpharma.view.AbsViewCadastroItem;
+import javax.swing.JButton;
 
 /**
  *
  * @author Adeline
  */
-public class PresenterCadastroProduto extends AbsPresenterCadastroItem{
+public abstract class PresenterConsultaPessoa extends AbsPresenterConsulta{
 
-    public PresenterCadastroProduto(AbsViewCadastroItem cadastro) {
-        super(cadastro);
-    }
     
 }
