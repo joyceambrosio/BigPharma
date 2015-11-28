@@ -54,8 +54,6 @@ public abstract class AbsPresenterCadastro extends AbsModel {
          cadastro.setVisible(false);
     }
     
-    public void salvar(){
-        
-    }
+    public abstract void salvar();
 
 }

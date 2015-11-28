@@ -8,6 +8,7 @@ package bigpharma.view;
 import bigpharma.model.PessoaFisico;
 import bigpharma.model.Endereco;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -46,7 +47,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
         jLabelCEP = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
         jTextFieldID = new javax.swing.JTextField();
-        jTextFieldCNPJ = new javax.swing.JTextField();
+        jTextFieldDocumento = new javax.swing.JTextField();
         jTextFieldTelefone = new javax.swing.JTextField();
         jTextFieldRua = new javax.swing.JTextField();
         jTextFieldNumero = new javax.swing.JTextField();
@@ -108,7 +109,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabelTelefone)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -159,7 +160,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabeCPF)
                     .addComponent(jLabelTelefone)
-                    .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -274,19 +275,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        int id = new Integer(this.jTextFieldID.getText());
-        int cpf = new Integer(this.jTextFieldCNPJ.getText());
-        String nome = this.jTextFieldNome.getText();
-        int tel = new Integer(this.jTextFieldTelefone.getText());
-
-        String rua = this.jTextFieldRua.getText();
-        int num = new Integer(this.jTextFieldNumero.getText());
-        String bairro = this.jTextFieldBairro.getText();
-        String cidade = this.jTextFieldCidade.getText();
-        int cep = new Integer(this.jTextFieldCEP.getText());
-
-        ((MainView) MainView.getFrames()[0]).clientes.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
-        this.setVisible(false);
+       
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
@@ -299,31 +288,11 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
-        //((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        //pessoa.setId(new Integer(this.jTextFieldID.getText())) ;
-        pessoa.setDocumento(new Integer(this.jTextFieldCNPJ.getText()));
-        pessoa.setNome(this.jTextFieldNome.getText());
-        //pessoa.setRazaoSocial(this.jTextFieldRazaoSocial.getText());
-        pessoa.setTelefone(new Integer(this.jTextFieldTelefone.getText()));
-        
-        pessoa.getEndereco().setBairro(this.jTextFieldBairro.getText());
-        pessoa.getEndereco().setCep(new Integer(this.jTextFieldCEP.getText()));
-        pessoa.getEndereco().setCidade(this.jTextFieldCidade.getText());
-        pessoa.getEndereco().setNum(new Integer(this.jTextFieldNumero.getText()));
-        pessoa.getEndereco().setRua(this.jTextFieldRua.getText());
-
-        //((MainView) MainView.getFrames()[0]).clientes.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
-        this.setVisible(false);
+       
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-       boolean resp=false;
-        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getNome());
-        }
-        if(resp==false){
-            ((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        }
+      
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void setjTextFieldBairro(String bairro) {
@@ -335,7 +304,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
     }
 
     public void setjTextFieldCNPJ(int cnpj) {
-        this.jTextFieldCNPJ.setText(Integer.toString(cnpj));
+        this.jTextFieldDocumento.setText(Integer.toString(cnpj));
     }
 
     public void setjTextFieldCidade(String cidade) {
@@ -387,7 +356,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
         this.jTextFieldNome.setEditable(false);
         this.jTextFieldBairro.setEditable(false);
         this.jTextFieldCEP.setEditable(false);
-        this.jTextFieldCNPJ.setEditable(false);
+        this.jTextFieldDocumento.setEditable(false);
         this.jTextFieldCidade.setEditable(false);
         this.jTextFieldNumero.setEditable(false);
         this.jTextFieldRua.setEditable(false);
@@ -400,7 +369,7 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
         this.jTextFieldNome.setEditable(true);
         this.jTextFieldBairro.setEditable(true);
         this.jTextFieldCEP.setEditable(true);
-        this.jTextFieldCNPJ.setEditable(true);
+        this.jTextFieldDocumento.setEditable(true);
         this.jTextFieldCidade.setEditable(true);
         this.jTextFieldNumero.setEditable(true);
         this.jTextFieldRua.setEditable(true);
@@ -435,6 +404,50 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
     public JButton getjButtonSalvarModificacao() {
         return jButtonSalvarModificacao;
     }
+
+    @Override
+    public JTextField getjTextFieldBairro() {
+        return jTextFieldBairro;
+    }
+    
+    @Override
+    public JTextField getjTextFieldCEP() {
+        return jTextFieldCEP;
+    }
+
+    @Override
+    public JTextField getjTextFieldDocumento() {
+        return jTextFieldDocumento;
+    }
+
+    @Override
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    @Override
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    @Override
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNome;
+    }
+
+    @Override
+    public JTextField getjTextFieldNumero() {
+        return jTextFieldNumero;
+    }
+
+    @Override
+    public JTextField getjTextFieldRua() {
+        return jTextFieldRua;
+    }
+    @Override
+    public JTextField getjTextFieldTelefone() {
+        return jTextFieldTelefone;
+    }
     
     
 
@@ -459,8 +472,8 @@ public class FCadastroPessoaFisica extends AbsViewCadastroPessoa {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldBairro;
     private javax.swing.JTextField jTextFieldCEP;
-    private javax.swing.JTextField jTextFieldCNPJ;
     private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldDocumento;
     private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNumero;

@@ -19,7 +19,6 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -347,42 +346,11 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
     }//GEN-LAST:event_jComboBoxProdutoActionPerformed
 
     private void jButtonAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarProdutoActionPerformed
-        Produto produto = (Produto) jComboBoxProduto.getSelectedItem();
-        int quantidade = Integer.parseInt(jTextFieldQtdProduto.getText());
-        double totalItem = quantidade * produto.getPreco();
-
-        DefaultTableModel model = (DefaultTableModel) jTableProdutos.getModel();
-        model.addRow(new Object[]{
-            produto.getNome(),
-            produto.getPreco(),
-            quantidade,
-            totalItem
-        });
-
-        produto.setQtdeEstoque(quantidade);
-        venda.add(produto);
-
-        totalVenda = totalVenda + totalItem;
-        jFormattedTextFieldDisplayTotal.setValue(totalVenda);
-        jTextFieldQtdProduto.setText("");;
+        
     }//GEN-LAST:event_jButtonAdicionarProdutoActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        ((MainView) MainView.getFrames()[0]).vendas.add(venda);
-        Produto newProduto = null;
-        boolean resp = false;
-        for (int i = 0; i < ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
-
-            newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
-            for (int j = 0; j < venda.getItems().size(); j++) {
-                resp = newProduto.getNome().equals(this.venda.getItems().get(j).getNome());
-
-                if (resp) {
-                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() - this.venda.getItems().get(j).getQtdeEstoque());
-                }
-            }
-        }
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jTextFieldDataCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataCompraActionPerformed
@@ -444,7 +412,24 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         return jTextFieldDataCompra;
     }
 
+    @Override
+    public JTextField getjTextFieldQtdProduto() {
+        return jTextFieldQtdProduto;
+    }
 
+    @Override
+    public double getTotalTransacao() {
+        return totalVenda;
+    }
+
+    @Override
+    public void setTotalTransacao(double totalVenda) {
+        this.totalVenda = totalVenda;
+    }
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarCliente;
     private javax.swing.JButton jButtonAdicionarProduto;

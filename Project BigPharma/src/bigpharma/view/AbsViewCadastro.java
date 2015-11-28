@@ -5,6 +5,7 @@
  */
 package bigpharma.view;
 
+
 import javax.swing.JButton;
 
 /**
@@ -16,5 +17,7 @@ public abstract class AbsViewCadastro extends AbsView {
     public abstract JButton getjButtonSair();
 
     public abstract JButton getjButtonSalvar();
-
+    
+    
+    
 }

@@ -7,7 +7,6 @@ package bigpharma.view;
 
 import bigpharma.model.Compra;
 import bigpharma.model.Pessoa;
-import bigpharma.model.PessoaJuridico;
 import bigpharma.model.Produto;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,7 +18,6 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -296,7 +294,7 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        this.setVisible(false);
+
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jComboBoxFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFornecedorActionPerformed
@@ -308,49 +306,15 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
     }//GEN-LAST:event_jComboBoxProdutoActionPerformed
 
     private void jButtonAdicionarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarFornecedorActionPerformed
-        PessoaJuridico fornecedor = (PessoaJuridico) jComboBoxFornecedor.getSelectedItem();
-        compra.setFornecedor(fornecedor);
+
     }//GEN-LAST:event_jButtonAdicionarFornecedorActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        ((MainView) MainView.getFrames()[0]).compras.add(compra);
-        Produto newProduto = null;
-        boolean resp = false;
-        for (int i = 0; i < ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
-
-            newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
-            for (int j = 0; j < compra.getItems().size(); j++) {
-                resp = newProduto.getNome().equals(this.compra.getItems().get(j).getNome());
-
-                if (resp) {
-                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() + this.compra.getItems().get(j).getQtdeEstoque());
-                }
-            }
-        }
-        this.setVisible(false);
 
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarProdutoActionPerformed
 
-        Produto produto = (Produto) jComboBoxProduto.getSelectedItem();
-        int quantidade = Integer.parseInt(jTextFieldQtdProduto.getText());
-        double totalItem = quantidade * produto.getPreco();
-
-        DefaultTableModel model = (DefaultTableModel) jTableProdutos.getModel();
-        model.addRow(new Object[]{
-            produto.getNome(),
-            produto.getPreco(),
-            quantidade,
-            totalItem
-        });
-
-        produto.setQtdeEstoque(quantidade);
-        compra.add(produto);
-
-        totalCompra = totalCompra + totalItem;
-        jFormattedTextFieldDisplayTotal.setValue(totalCompra);
-        jTextFieldQtdProduto.setText("");
     }//GEN-LAST:event_jButtonAdicionarProdutoActionPerformed
 
     @Override
@@ -362,7 +326,7 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
     public JButton getjButtonSalvar() {
         return jButtonSalvar;
     }
-    
+
     @Override
     public JButton getjButtonAdicionarProduto() {
         return jButtonAdicionarProduto;
@@ -398,8 +362,29 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
         return jTextFieldDataCompra;
     }
 
-    
-    
+    @Override
+    public JTextField getjTextFieldQtdProduto() {
+        return jTextFieldQtdProduto;
+    }
+
+    @Override
+    public double getTotalTransacao() {
+        return totalCompra;
+    }
+
+    @Override
+    public void setTotalTransacao(double totalCompra) {
+        this.totalCompra = totalCompra;
+    }
+
+    public JButton getjButtonAdicionarFornecedor() {
+        return jButtonAdicionarFornecedor;
+    }
+
+    public JComboBox getjComboBoxFornecedor() {
+        return jComboBoxFornecedor;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarFornecedor;

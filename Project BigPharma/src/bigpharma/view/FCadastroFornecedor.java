@@ -8,6 +8,7 @@ package bigpharma.view;
 import bigpharma.model.Endereco;
 import bigpharma.model.PessoaJuridico;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -463,7 +464,49 @@ public class FCadastroFornecedor extends AbsViewCadastroPessoa {
     }
     
     
+@Override
+    public JTextField getjTextFieldBairro() {
+        return jTextFieldBairro;
+    }
+    
+    @Override
+    public JTextField getjTextFieldCEP() {
+        return jTextFieldCEP;
+    }
 
+    @Override
+    public JTextField getjTextFieldDocumento() {
+        return jTextFieldCNPJ;
+    }
+
+    @Override
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    @Override
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    @Override
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNomeFantasia;
+    }
+
+    @Override
+    public JTextField getjTextFieldNumero() {
+        return jTextFieldNumero;
+    }
+
+    @Override
+    public JTextField getjTextFieldRua() {
+        return jTextFieldRua;
+    }
+    @Override
+    public JTextField getjTextFieldTelefone() {
+        return jTextFieldTelefone;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEditar;

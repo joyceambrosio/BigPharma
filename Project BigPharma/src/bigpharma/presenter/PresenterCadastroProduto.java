@@ -5,16 +5,19 @@
  */
 package bigpharma.presenter;
 
+
 import bigpharma.view.AbsViewCadastroItem;
 
 /**
  *
  * @author Adeline
  */
-public class PresenterCadastroProduto extends AbsPresenterCadastroItem{
+public class PresenterCadastroProduto extends AbsPresenterCadastroItem {
 
     public PresenterCadastroProduto(AbsViewCadastroItem cadastro) {
         super(cadastro);
     }
-    
+
+   
+
 }

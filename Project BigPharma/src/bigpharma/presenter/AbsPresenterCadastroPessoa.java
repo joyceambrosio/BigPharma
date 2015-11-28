@@ -50,15 +50,11 @@ public abstract class AbsPresenterCadastroPessoa extends AbsPresenterCadastro {
     }
 
     public void editar() {
-
+        
     }
 
-    public void salvarModificacao() {
+    public abstract void salvarModificacao() ;
 
-    }
-
-    public void excluir() {
-
-    }
+    public abstract void excluir();
 
 }

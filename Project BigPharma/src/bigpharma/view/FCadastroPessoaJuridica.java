@@ -8,6 +8,7 @@ package bigpharma.view;
 import bigpharma.model.PessoaJuridico;
 import bigpharma.model.Endereco;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -298,20 +299,7 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        int id = new Integer(this.jTextFieldID.getText());
-        int cnpj = new Integer(this.jTextFieldCNPJ.getText());
-        String nome = this.jTextFieldNomeFantasia.getText();
-        int tel = new Integer(this.jTextFieldTelefone.getText());
-        String razaoSocial = this.jTextFieldRazaoSocial.getText();
-
-        String rua = this.jTextFieldRua.getText();
-        int num = new Integer(this.jTextFieldNumero.getText());
-        String bairro = this.jTextFieldBairro.getText();
-        String cidade = this.jTextFieldCidade.getText();
-        int cep = new Integer(this.jTextFieldCEP.getText());
-
-        ((MainView) MainView.getFrames()[0]).clientes.add(new PessoaJuridico(cnpj, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
@@ -320,31 +308,11 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
-        //((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        //pessoa.setId(new Integer(this.jTextFieldID.getText()));
-        pessoa.setDocumento(new Integer(this.jTextFieldCNPJ.getText()));
-        pessoa.setNome(this.jTextFieldNomeFantasia.getText());
-        pessoa.setRazaoSocial(this.jTextFieldRazaoSocial.getText());
-        pessoa.setTelefone(new Integer(this.jTextFieldTelefone.getText()));
-
-        pessoa.getEndereco().setBairro(this.jTextFieldBairro.getText());
-        pessoa.getEndereco().setCep(new Integer(this.jTextFieldCEP.getText()));
-        pessoa.getEndereco().setCidade(this.jTextFieldCidade.getText());
-        pessoa.getEndereco().setNum(new Integer(this.jTextFieldNumero.getText()));
-        pessoa.getEndereco().setRua(this.jTextFieldRua.getText());
-
-        //((MainView) MainView.getFrames()[0]).clientes.add(new PessoaJuridico(cnpj, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
-        this.setVisible(false);
+       
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-       boolean resp=false;
-        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getCliente().getNome());
-        }
-        if(resp==false){
-            ((MainView) MainView.getFrames()[0]).clientes.remove(pessoa);
-        }
+      
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void setjTextFieldBairro(String bairro) {
@@ -461,6 +429,54 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     @Override
     public JButton getjButtonSalvarModificacao() {
         return jButtonSalvarModificacao;
+    }
+    
+    @Override
+    public JTextField getjTextFieldBairro() {
+        return jTextFieldBairro;
+    }
+    
+    @Override
+    public JTextField getjTextFieldCEP() {
+        return jTextFieldCEP;
+    }
+
+    @Override
+    public JTextField getjTextFieldDocumento() {
+        return jTextFieldCNPJ;
+    }
+
+    @Override
+    public JTextField getjTextFieldCidade() {
+        return jTextFieldCidade;
+    }
+
+    @Override
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    @Override
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNomeFantasia;
+    }
+
+    @Override
+    public JTextField getjTextFieldNumero() {
+        return jTextFieldNumero;
+    }
+
+    @Override
+    public JTextField getjTextFieldRua() {
+        return jTextFieldRua;
+    }
+    @Override
+    public JTextField getjTextFieldTelefone() {
+        return jTextFieldTelefone;
+    }
+
+    public JTextField getjTextFieldRazaoSocial() {
+        return jTextFieldRazaoSocial;
     }
     
     

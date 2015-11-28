@@ -32,4 +32,10 @@ public abstract class AbsViewCadastroTransacao extends AbsViewCadastro {
 
     public abstract JTextField getjTextFieldDataCompra();
 
+    public abstract JTextField getjTextFieldQtdProduto();
+
+    public abstract double getTotalTransacao();
+
+    public abstract void setTotalTransacao(double totalCompra);
+    
 }

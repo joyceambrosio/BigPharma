@@ -6,6 +6,7 @@
 package bigpharma.view;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,5 +19,23 @@ public abstract class AbsViewCadastroPessoa extends AbsViewCadastro {
     public abstract JButton getjButtonExcluir();
 
     public abstract JButton getjButtonSalvarModificacao();
+    
+     public abstract JTextField getjTextFieldBairro();
+
+    public abstract JTextField getjTextFieldCEP();
+
+    public abstract JTextField getjTextFieldDocumento();
+
+    public abstract JTextField getjTextFieldCidade();
+
+    public abstract JTextField getjTextFieldID();
+
+    public abstract JTextField getjTextFieldNome();
+
+    public abstract JTextField getjTextFieldNumero();
+
+    public abstract JTextField getjTextFieldRua();
+
+    public abstract JTextField getjTextFieldTelefone();
 
 }

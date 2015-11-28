@@ -5,10 +5,24 @@
  */
 package bigpharma.view;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Adeline
  */
-public abstract class AbsViewCadastroItem extends AbsViewCadastro{
-    
+public abstract class AbsViewCadastroItem extends AbsViewCadastro {
+
+    public abstract JButton getjButtonEditar();
+
+    public abstract JButton getjButtonExcluir();
+
+    public abstract JButton getjButtonSalvarModificacao();
+
+    public abstract JTextField getjTextFieldID();
+
+    public abstract JTextField getjTextFieldPreco();
+
+    public abstract JTextField getjTextFieldNome();
 }

@@ -142,9 +142,9 @@ public class FConsultaProduto extends javax.swing.JInternalFrame {
                 objCadastro.setjTextFieldNome(newProduto.getNome());
                 objCadastro.setjTextFieldID(newProduto.getId());
                 objCadastro.setjTextFieldPreco(newProduto.getPreco());
-                objCadastro.setjTextFieldsUnable();
-                objCadastro.setjButtonSalvarFalse();
-                objCadastro.setjButtonSalvarModificacaoFalse();
+//                objCadastro.setjTextFieldsUnable();
+//                objCadastro.setjButtonSalvarFalse();
+//                objCadastro.setjButtonSalvarModificacaoFalse();
                 objCadastro.setProduto(newProduto);
                 objCadastro.setVisible(true);
 

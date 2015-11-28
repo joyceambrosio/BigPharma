@@ -7,12 +7,13 @@ package bigpharma.view;
 
 import bigpharma.model.Produto;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Joyce
  */
-public class FCadastroProduto extends AbsViewCadastroPessoa {
+public class FCadastroProduto extends AbsViewCadastroItem {
 
     /**
      * Creates new form FCadastroClienteJuridico
@@ -188,48 +189,23 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        int id = new Integer(this.jTextFieldID.getText());
-        double preco = new Double(this.jTextFieldPreco.getText().replace(",", "."));
-        String nome = this.jTextFieldNome.getText();
-
-        ((MainView) MainView.getFrames()[0]).produtos.add(new Produto(nome, preco));
-        this.setVisible(false);
+       
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        this.setjTextFieldsEnable();
-        this.setjButtonSalvarModificacaoTrue();
+        
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
-        //((MainView) MainView.getFrames()[0]).produtos.remove(produto);
-        //produto.setId(new Integer(this.jTextFieldID.getText()));
-        produto.setNome(this.jTextFieldNome.getText());
-        produto.setPreco(new Double(this.jTextFieldPreco.getText().replace(",", ".")));
-
-        //((MainView) MainView.getFrames()[0]).produtos.add(new Produto(id, nome, preco));
-        this.setVisible(false);
+       
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        boolean resp=false;
-        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            for(int j=0;j<((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().size();j++){
-            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getItems().get(j).getNome());
-        
-            }
-            for(int j=0;j<((MainView) MainView.getFrames()[0]).compras.get(i).getItems().size();j++){
-            resp=(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getItems().get(j).getNome())&&(produto.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getItems().get(j).getNome());
-        
-            }
-        }
-        if(resp==false){
-            ((MainView) MainView.getFrames()[0]).produtos.remove(produto);
-        }
+       
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void setjTextFieldID(int id) {
@@ -266,18 +242,10 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
         this.jTextFieldPreco.setEditable(false);
     }
 
-    public void setjTextFieldsEnable() {
-        this.jTextFieldID.setEditable(true);
-        this.jTextFieldNome.setEditable(true);
-        this.jTextFieldPreco.setEditable(true);
-    }
+    
 
     public void setProduto(Produto produto) {
         this.produto = produto;
-    }
-    
-    public void setjButtonExcluirFalse() {
-        this.jButtonExcluir.setVisible(false);
     }
 
     @Override
@@ -324,4 +292,19 @@ public class FCadastroProduto extends AbsViewCadastroPessoa {
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldPreco;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public JTextField getjTextFieldID() {
+        return jTextFieldID;
+    }
+
+    @Override
+    public JTextField getjTextFieldPreco() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public JTextField getjTextFieldNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
