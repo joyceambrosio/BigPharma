@@ -64,6 +64,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroPessoaJuridica objCadastro = new FCadastroPessoaJuridica();
+                        PresenterCadastroPessoaJuridica cadastro = new PresenterCadastroPessoaJuridica(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                          state=new Cadastrando();
                          state.cadastrandoPessoa(objCadastro);

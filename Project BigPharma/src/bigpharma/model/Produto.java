@@ -5,11 +5,13 @@
  */
 package bigpharma.model;
 
+import Composite.IItem;
+
 /**
  *
  * @author Joyce
  */
-public class Produto extends AbsModel {
+public class Produto extends AbsModel implements IItem{
 
     private String nome;
     private double preco;

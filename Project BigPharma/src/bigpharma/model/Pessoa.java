@@ -5,13 +5,14 @@
  */
 package bigpharma.model;
 
+import Composite.IPessoa;
 import java.io.Serializable;
 
 /**
  *
  * @author Joyce
  */
-public abstract class Pessoa extends AbsModel implements Serializable {
+public abstract class Pessoa extends AbsModel implements Serializable, IPessoa{
 
     protected int documento;
     protected int id;

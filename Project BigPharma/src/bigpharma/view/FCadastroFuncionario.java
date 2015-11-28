@@ -89,6 +89,8 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
             }
         });
 
+        jTextFieldID.setEditable(false);
+
         jTextFieldCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCEPActionPerformed(evt);

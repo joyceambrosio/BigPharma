@@ -5,13 +5,14 @@
  */
 package bigpharma.model;
 
+import Composite.ITransacao;
 import java.util.ArrayList;
 
 /**
  *
  * @author Adeline
  */
-public abstract class Transacao extends AbsModel {
+public abstract class Transacao extends AbsModel implements ITransacao {
 
     ArrayList<Produto> transacaoItems;
 

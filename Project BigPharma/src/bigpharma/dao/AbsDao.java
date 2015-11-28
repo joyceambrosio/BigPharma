@@ -19,35 +19,35 @@ public class AbsDao {
     protected java.util.List<AbsModel> lista;
     protected String fileName = null;
     private IPersistencia formaPersistencia = null;
-       
+
     public AbsDao(IPersistencia FormaPersistencia) {
         this.formaPersistencia = FormaPersistencia;
     }
 
     public void add(AbsModel obl) throws Exception {
         if (this.lista == null) {
-            this.lista = new ArrayList<AbsModel>();
+            this.lista = new ArrayList<>();
         }
-        if (obl.getId() == 0) {
-            obl.setId(nextId());
-            this.lista.add(obl);
-        }
+
+//        if (obl.getId() == 0) {
+//            obl.setId(nextId());
+        this.lista.add(obl);
+//        }
         save();
     }
 
-    private int nextId() {
-        int ultId = 0;
-        if (lista != null) {
-            for (AbsModel item : lista) {
-                if (item.getId() > ultId) {
-                    ultId = item.getId();
-                }
-            }
-        }
-
-        return ++ultId;
-    }
-
+//    private int nextId() {
+//        int ultId = 0;
+//        if (lista != null) {
+//            for (AbsModel item : lista) {
+//                if (item.getId() > ultId) {
+//                    ultId = item.getId();
+//                }
+//            }
+//        }
+//
+//        return ++ultId;
+//    }
     public void remove(AbsModel obl) throws Exception {
         if (this.lista == null) {
             this.lista = new ArrayList<AbsModel>();
@@ -69,17 +69,16 @@ public class AbsDao {
         }
     }
 
-    public AbsModel obtem(int Id) {
-        if (lista != null) {
-            for (AbsModel item : lista) {
-                if (item.getId() == Id) {
-                    return (AbsModel) item;
-                }
-            }
-        }
-        return null;
-    }
-
+//    public AbsModel obtem(int Id) {
+//        if (lista != null) {
+//            for (AbsModel item : lista) {
+//                if (item.getId() == Id) {
+//                    return (AbsModel) item;
+//                }
+//            }
+//        }
+//        return null;
+//    }
     public void load() throws Exception {
         if (fileName != null) {
             lista = (ArrayList<AbsModel>) formaPersistencia.recupera(fileName);

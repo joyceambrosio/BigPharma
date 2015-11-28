@@ -5,6 +5,9 @@
  */
 package bigpharma.presenter;
 
+import bigpharma.dao.AbsDao;
+import bigpharma.dao.bridge.IPersistencia;
+import bigpharma.model.AbsModel;
 import bigpharma.model.Endereco;
 import bigpharma.model.PessoaJuridico;
 import bigpharma.view.AbsViewCadastroPessoa;
@@ -16,14 +19,16 @@ import bigpharma.view.MainView;
  * @author Adeline
  */
 public class PresenterCadastroPessoaJuridica extends AbsPresenterCadastroPessoa {
-
+    AbsModel modelAtual = null;
+    
     public PresenterCadastroPessoaJuridica(AbsViewCadastroPessoa cadastro) {
         super(cadastro);
     }
 
     @Override
     public void salvar() {
-        int id = new Integer(((AbsViewCadastroPessoa) cadastro).getjTextFieldID().getText());
+        
+//      int id = new Integer(((AbsViewCadastroPessoa) cadastro).getjTextFieldID().getText());
         int cpf = new Integer(((AbsViewCadastroPessoa) cadastro).getjTextFieldDocumento().getText());
         String nome = ((AbsViewCadastroPessoa) cadastro).getjTextFieldNome().getText();
         int tel = new Integer(((AbsViewCadastroPessoa) cadastro).getjTextFieldTelefone().getText());

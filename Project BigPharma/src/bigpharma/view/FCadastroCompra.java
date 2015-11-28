@@ -174,7 +174,13 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
 
         jLabelTotal.setText("Total");
 
+        jFormattedTextFieldDisplayTotal.setEditable(false);
         jFormattedTextFieldDisplayTotal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        jFormattedTextFieldDisplayTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldDisplayTotalActionPerformed(evt);
+            }
+        });
 
         jButtonAdicionarProduto.setText("Adicionar");
         jButtonAdicionarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -316,6 +322,10 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
     private void jButtonAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarProdutoActionPerformed
 
     }//GEN-LAST:event_jButtonAdicionarProdutoActionPerformed
+
+    private void jFormattedTextFieldDisplayTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDisplayTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldDisplayTotalActionPerformed
 
     @Override
     public JButton getjButtonSair() {

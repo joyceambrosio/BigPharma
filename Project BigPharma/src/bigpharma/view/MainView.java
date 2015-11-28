@@ -32,7 +32,10 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
     }
+
     public ArrayList<Pessoa> clientes = new ArrayList();
+
+    //fornecedores = new ListaPessoaJuridica();
     public ArrayList<Compra> compras = new ArrayList();
     public ArrayList<Produto> produtos = new ArrayList();
     public ArrayList<Venda> vendas = new ArrayList();
@@ -223,19 +226,19 @@ public class MainView extends javax.swing.JFrame {
 
 
     private void jMenuItemConClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConClienteActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemConClienteActionPerformed
 
     private void jMenuItemCadClienteFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteFisicoActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemCadClienteFisicoActionPerformed
 
     private void jMenuItemCadClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteJuridicoActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemCadClienteJuridicoActionPerformed
 
     private void jMenuItemCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFornecedorActionPerformed
-       
+
     }//GEN-LAST:event_jMenuItemCadFornecedorActionPerformed
 
     private void jMenuItemCadCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadCompraActionPerformed
@@ -243,37 +246,37 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemCadCompraActionPerformed
 
     private void jMenuItemVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVendaActionPerformed
-       
+
     }//GEN-LAST:event_jMenuItemVendaActionPerformed
 
     private void jMenuItemCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadProdutoActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemCadProdutoActionPerformed
 
     private void jMenuItemConProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConProdutoActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemConProdutoActionPerformed
 
     private void jMenuItemConFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFornecedorActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemConFornecedorActionPerformed
 
     private void jMenuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFuncionarioActionPerformed
-       
+
     }//GEN-LAST:event_jMenuItemFuncionarioActionPerformed
 
     private void jMenuItemConFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFuncionarioActionPerformed
-       
+
     }//GEN-LAST:event_jMenuItemConFuncionarioActionPerformed
 
     private void jMenuItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalvarActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemSalvarActionPerformed
 
     private void jMenuItemCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCarregarActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItemCarregarActionPerformed
-public JMenuItem getjMenuItemCadClienteFisico() {
+    public JMenuItem getjMenuItemCadClienteFisico() {
         return jMenuItemCadClienteFisico;
     }
 
@@ -332,7 +335,7 @@ public JMenuItem getjMenuItemCadClienteFisico() {
     public JDesktopPane getjDesktopPane() {
         return jDesktopPane;
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -366,26 +369,20 @@ public JMenuItem getjMenuItemCadClienteFisico() {
                 try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                     MainView main = new MainView();
-                    new PresenterMain(main).carregaMain(true,main);
-                } catch (ClassNotFoundException ex)
-                {
+                    new PresenterMain(main).carregaMain(true, main);
+                } catch (ClassNotFoundException ex) {
                     Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (InstantiationException ex)
-                {
+                } catch (InstantiationException ex) {
                     Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IllegalAccessException ex)
-                {
+                } catch (IllegalAccessException ex) {
                     Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (UnsupportedLookAndFeelException ex)
-                {
+                } catch (UnsupportedLookAndFeelException ex) {
                     Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
     }
 
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane;

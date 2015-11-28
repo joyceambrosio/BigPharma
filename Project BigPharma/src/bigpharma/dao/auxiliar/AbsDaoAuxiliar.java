@@ -26,10 +26,10 @@ public abstract class AbsDaoAuxiliar extends AbsModel{
     public ArrayList<AbsModel> obtemTodos() {
         return getDaoInstance().obtemTodos();
     }
-
-    public AbsModel obtem(int Id) {
-        return getDaoInstance().obtem(Id);
-    }
+//
+//    public AbsModel obtem(int Id) {
+//        return getDaoInstance().obtem(Id);
+//    }
 
     public void Cadastra(AbsModel model) throws Exception {
         getDaoInstance().add(model);

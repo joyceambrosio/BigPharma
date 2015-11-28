@@ -216,6 +216,7 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
 
         jComboBoxDescontoVenda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jFormattedTextFieldDisplayTotal.setEditable(false);
         jFormattedTextFieldDisplayTotal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
         jFormattedTextFieldDisplayTotal.setToolTipText("");
 
