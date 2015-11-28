@@ -6,7 +6,6 @@
 package bigpharma.view;
 
 import bigpharma.model.PessoaJuridico;
-import bigpharma.model.Endereco;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
