@@ -7,6 +7,7 @@ package bigpharma.state;
 
 import bigpharma.view.AbsViewCadastroItem;
 import bigpharma.view.AbsViewCadastroPessoa;
+import bigpharma.view.FCadastroPessoaJuridica;
 
 /**
  *
@@ -39,14 +40,42 @@ public class Consultando implements IState {
         cadastro.getjTextFieldID().setEditable(false);
         cadastro.getjTextFieldNome().setEditable(false);
         cadastro.getjTextFieldPreco().setEditable(false);
+
+        cadastro.getjButtonSalvar().setVisible(false);
+        cadastro.getjButtonSalvarModificacao().setVisible(false);
+    }
+
+    @Override
+    public void consultandoPessoaFisica(AbsViewCadastroPessoa cadastro) {
+        cadastro.getjTextFieldID().setEditable(false);
+        cadastro.getjTextFieldNome().setEditable(false);
+        cadastro.getjTextFieldBairro().setEditable(false);
+        cadastro.getjTextFieldCEP().setEditable(false);
+        cadastro.getjTextFieldDocumento().setEditable(false);
+        cadastro.getjTextFieldCidade().setEditable(false);
+        cadastro.getjTextFieldNumero().setEditable(false);
+        cadastro.getjTextFieldRua().setEditable(false);
+        cadastro.getjTextFieldTelefone().setEditable(false);
         
         cadastro.getjButtonSalvar().setVisible(false);
         cadastro.getjButtonSalvarModificacao().setVisible(false);
     }
 
     @Override
-    public void consultandoPessoa(AbsViewCadastroPessoa cadastro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void consultandoPessoaJuridica(AbsViewCadastroPessoa cadastro) {
+        cadastro.getjTextFieldID().setEditable(false);
+        ((FCadastroPessoaJuridica) cadastro).getjTextFieldNome().setEditable(false);
+        cadastro.getjTextFieldBairro().setEditable(false);
+        cadastro.getjTextFieldCEP().setEditable(false);
+        cadastro.getjTextFieldDocumento().setEditable(false);
+        cadastro.getjTextFieldCidade().setEditable(false);
+        cadastro.getjTextFieldNumero().setEditable(false);
+        cadastro.getjTextFieldRua().setEditable(false);
+        cadastro.getjTextFieldTelefone().setEditable(false);
+        ((FCadastroPessoaJuridica) cadastro).getjTextFieldRazaoSocial().setEditable(false);
+
+        cadastro.getjButtonSalvar().setVisible(false);
+        cadastro.getjButtonSalvarModificacao().setVisible(false);
     }
 
 }

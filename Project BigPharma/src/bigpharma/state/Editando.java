@@ -12,11 +12,11 @@ import bigpharma.view.AbsViewCadastroPessoa;
  *
  * @author Adeline
  */
-public class Editando implements IState{
+public class Editando implements IState {
 
     @Override
     public void cadastrandoItem(AbsViewCadastroItem cadastro) {
-        
+
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Editando implements IState{
         cadastro.getjTextFieldID().setEditable(true);
         cadastro.getjTextFieldNome().setEditable(true);
         cadastro.getjTextFieldPreco().setEditable(true);
-        
+
         cadastro.getjButtonSalvarModificacao().setVisible(true);
     }
 
@@ -37,8 +37,7 @@ public class Editando implements IState{
     public void editandoPessoa(AbsViewCadastroPessoa cadastro) {
         cadastro.getjTextFieldID().setEditable(true);
         cadastro.getjTextFieldNome().setEditable(true);
-       
-        
+
         cadastro.getjButtonSalvarModificacao().setVisible(true);
     }
 
@@ -48,8 +47,13 @@ public class Editando implements IState{
     }
 
     @Override
-    public void consultandoPessoa(AbsViewCadastroPessoa cadastro) {
+    public void consultandoPessoaFisica(AbsViewCadastroPessoa cadastro) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public void consultandoPessoaJuridica(AbsViewCadastroPessoa cadastro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

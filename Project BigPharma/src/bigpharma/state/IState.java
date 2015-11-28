@@ -21,6 +21,7 @@ public interface IState {
     public void editandoPessoa(AbsViewCadastroPessoa cadastro);
     
     public void consultandoItem(AbsViewCadastroItem cadastro);
-    public void consultandoPessoa(AbsViewCadastroPessoa cadastro);
+    public void consultandoPessoaFisica(AbsViewCadastroPessoa cadastro);
+    public void consultandoPessoaJuridica(AbsViewCadastroPessoa cadastro);
 
 }

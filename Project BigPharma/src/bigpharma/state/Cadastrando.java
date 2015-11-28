@@ -8,10 +8,6 @@ package bigpharma.state;
 import bigpharma.view.AbsViewCadastroItem;
 import bigpharma.view.AbsViewCadastroPessoa;
 
-
-
-
-
 /**
  *
  * @author Adeline
@@ -23,12 +19,12 @@ public class Cadastrando implements IState {
         cadastro.getjButtonEditar().setVisible(false);
         cadastro.getjButtonSalvarModificacao().setVisible(false);
         cadastro.getjButtonExcluir().setVisible(false);
-        
+
     }
 
     @Override
     public void editandoItem(AbsViewCadastroItem cadastro) {
-        
+
     }
 
     @Override
@@ -49,7 +45,12 @@ public class Cadastrando implements IState {
     }
 
     @Override
-    public void consultandoPessoa(AbsViewCadastroPessoa cadastro) {
+    public void consultandoPessoaFisica(AbsViewCadastroPessoa cadastro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void consultandoPessoaJuridica(AbsViewCadastroPessoa cadastro) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
