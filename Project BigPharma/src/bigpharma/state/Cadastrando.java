@@ -19,6 +19,8 @@ public class Cadastrando implements IState {
         cadastro.getjButtonEditar().setVisible(false);
         cadastro.getjButtonSalvarModificacao().setVisible(false);
         cadastro.getjButtonExcluir().setVisible(false);
+        cadastro.getjTextFieldID().setVisible(false);
+        cadastro.getjLabelID().setVisible(false);
 
     }
 
@@ -32,6 +34,8 @@ public class Cadastrando implements IState {
         cadastro.getjButtonEditar().setVisible(false);
         cadastro.getjButtonSalvarModificacao().setVisible(false);
         cadastro.getjButtonExcluir().setVisible(false);
+        cadastro.getjTextFieldID().setVisible(false);
+        cadastro.getjLabelID().setVisible(false);
     }
 
     @Override

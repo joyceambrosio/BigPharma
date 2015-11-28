@@ -7,6 +7,7 @@ package bigpharma.view;
 
 import bigpharma.model.Produto;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -302,11 +303,16 @@ public class FCadastroProduto extends AbsViewCadastroItem {
 
     @Override
     public JTextField getjTextFieldPreco() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return jTextFieldPreco;
     }
 
     @Override
     public JTextField getjTextFieldNome() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return jTextFieldNome;
+    }
+
+    @Override
+    public JLabel getjLabelID() {
+        return jLabelID;
     }
 }

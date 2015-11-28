@@ -6,6 +6,7 @@
 package bigpharma.view;
 
 
+import bigpharma.model.AbsModel;
 import bigpharma.model.Produto;
 
 /**
@@ -126,12 +127,12 @@ public class FConsultaProduto extends javax.swing.JInternalFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
-        Produto newProduto = null;
+        AbsModel newProduto = null;
 
         for (int i = 0; i <= ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
 
             newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
-            boolean resp = newProduto.getNome().equals(this.jTextFieldNome.getText());
+            boolean resp = ((Produto)newProduto).getNome().equals(this.jTextFieldNome.getText());
 
             if (resp) {
                 i = ((MainView) MainView.getFrames()[0]).produtos.size() + 1;
@@ -139,13 +140,13 @@ public class FConsultaProduto extends javax.swing.JInternalFrame {
 
         }
         if (!((MainView) MainView.getFrames()[0]).produtos.isEmpty()) {
-                objCadastro.setjTextFieldNome(newProduto.getNome());
-                objCadastro.setjTextFieldID(newProduto.getId());
-                objCadastro.setjTextFieldPreco(newProduto.getPreco());
+                objCadastro.setjTextFieldNome(((Produto)newProduto).getNome());
+                objCadastro.setjTextFieldID(((Produto)newProduto).getId());
+                objCadastro.setjTextFieldPreco(((Produto)newProduto).getPreco());
 //                objCadastro.setjTextFieldsUnable();
 //                objCadastro.setjButtonSalvarFalse();
 //                objCadastro.setjButtonSalvarModificacaoFalse();
-                objCadastro.setProduto(newProduto);
+                objCadastro.setProduto(((Produto)newProduto));
                 objCadastro.setVisible(true);
 
             }

@@ -5,6 +5,8 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.AbsModel;
+import bigpharma.model.Pessoa;
 import bigpharma.model.PessoaJuridico;
 
 /**
@@ -148,34 +150,34 @@ public class FConsultaFornecedor extends javax.swing.JInternalFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
-        PessoaJuridico newFornecedor = null;
+        AbsModel newFornecedor = null;
 
         for (int i = 0; i <= ((MainView) MainView.getFrames()[0]).fornecedores.size(); i++) {
 
             newFornecedor = ((MainView) MainView.getFrames()[0]).fornecedores.get(i);
-            boolean resp = newFornecedor.getNome().equals(this.jTextFieldNome.getText());
+            boolean resp = ((Pessoa)newFornecedor).getNome().equals(this.jTextFieldNome.getText());
 
-            if (resp && (newFornecedor.getDocumento() == (new Integer(this.jTextFieldCNPJ.getText())))) {
+            if (resp && (((Pessoa)newFornecedor).getDocumento() == (new Integer(this.jTextFieldCNPJ.getText())))) {
                 i = ((MainView) MainView.getFrames()[0]).fornecedores.size() + 1;
             }
 
         }
         if (!((MainView) MainView.getFrames()[0]).fornecedores.isEmpty()) {
 
-            objCadastro2.setjTextFieldNomeFantasia(newFornecedor.getNome());
+            objCadastro2.setjTextFieldNomeFantasia(((Pessoa)newFornecedor).getNome());
             objCadastro2.setjTextFieldID(newFornecedor.getId());
-            objCadastro2.setjTextFieldCNPJ(newFornecedor.getDocumento());
-            objCadastro2.setjTextFieldTelefone(newFornecedor.getTelefone());
-            objCadastro2.setjTextFieldRua(newFornecedor.getEndereco().getRua());
-            objCadastro2.setjTextFieldNumero(newFornecedor.getEndereco().getNum());
-            objCadastro2.setjTextFieldBairro(newFornecedor.getEndereco().getBairro());
-            objCadastro2.setjTextFieldCidade(newFornecedor.getEndereco().getCidade());
-            objCadastro2.setjTextFieldCEP(newFornecedor.getEndereco().getCep());
+            objCadastro2.setjTextFieldCNPJ(((Pessoa)newFornecedor).getDocumento());
+            objCadastro2.setjTextFieldTelefone(((Pessoa)newFornecedor).getTelefone());
+            objCadastro2.setjTextFieldRua(((Pessoa)newFornecedor).getEndereco().getRua());
+            objCadastro2.setjTextFieldNumero(((Pessoa)newFornecedor).getEndereco().getNum());
+            objCadastro2.setjTextFieldBairro(((Pessoa)newFornecedor).getEndereco().getBairro());
+            objCadastro2.setjTextFieldCidade(((Pessoa)newFornecedor).getEndereco().getCidade());
+            objCadastro2.setjTextFieldCEP(((Pessoa)newFornecedor).getEndereco().getCep());
             objCadastro2.setjTextFieldRazaoSocial(((PessoaJuridico) newFornecedor).getRazaoSocial());
 
-            objCadastro2.setjTextFieldsUnable();
-            objCadastro2.setjButtonSalvarFalse();
-            objCadastro2.setjButtonSalvarModificacaoFalse();
+//            objCadastro2.setjTextFieldsUnable();
+//            objCadastro2.setjButtonSalvarFalse();
+//            objCadastro2.setjButtonSalvarModificacaoFalse();
 
             objCadastro2.setPessoa((PessoaJuridico) newFornecedor);
 

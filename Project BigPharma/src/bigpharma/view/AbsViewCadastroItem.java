@@ -6,6 +6,7 @@
 package bigpharma.view;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -25,4 +26,6 @@ public abstract class AbsViewCadastroItem extends AbsViewCadastro {
     public abstract JTextField getjTextFieldPreco();
 
     public abstract JTextField getjTextFieldNome();
+    
+    public abstract JLabel getjLabelID();
 }

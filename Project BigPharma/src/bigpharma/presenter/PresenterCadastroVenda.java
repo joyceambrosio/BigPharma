@@ -5,10 +5,13 @@
  */
 package bigpharma.presenter;
 
+import bigpharma.model.AbsModel;
 import bigpharma.model.Venda;
 import bigpharma.model.Produto;
 import bigpharma.view.AbsViewCadastroTransacao;
 import bigpharma.view.MainView;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,17 +25,21 @@ public class PresenterCadastroVenda extends AbsPresenterCadastroTransacao{
 
     @Override
     public void salvar() {
-        ((MainView) MainView.getFrames()[0]).vendas.add(((Venda) atual));
-        Produto newProduto = null;
+        try {
+            ((MainView) MainView.getFrames()[0]).vendas.add(((Venda) atual));
+        } catch (Exception ex) {
+            Logger.getLogger(PresenterCadastroVenda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AbsModel newProduto = null;
         boolean resp = false;
         for (int i = 0; i < ((MainView) MainView.getFrames()[0]).produtos.size(); i++) {
 
             newProduto = ((MainView) MainView.getFrames()[0]).produtos.get(i);
             for (int j = 0; j < ((Venda) atual).getItems().size(); j++) {
-                resp = newProduto.getNome().equals(((Venda) atual).getItems().get(j).getNome());
+                resp = ((Produto)newProduto).getNome().equals(((Venda) atual).getItems().get(j).getNome());
 
                 if (resp) {
-                    ((MainView) MainView.getFrames()[0]).produtos.get(i).setQtdeEstoque(((MainView) MainView.getFrames()[0]).produtos.get(i).getQtdeEstoque() - ((Venda) atual).getItems().get(j).getQtdeEstoque());
+                    ((Produto)((MainView) MainView.getFrames()[0]).produtos.get(i)).setQtdeEstoque(((Produto)((MainView) MainView.getFrames()[0]).produtos.get(i)).getQtdeEstoque() - ((Venda) atual).getItems().get(j).getQtdeEstoque());
                 }
             }
         }

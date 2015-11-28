@@ -5,9 +5,9 @@
  */
 package bigpharma.view;
 
-import bigpharma.model.Endereco;
 import bigpharma.model.PessoaJuridico;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -299,25 +299,25 @@ public class FCadastroFornecedor extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        int id = new Integer(this.jTextFieldID.getText());
-        int cnpj = new Integer(this.jTextFieldCNPJ.getText());
-        String nome = this.jTextFieldNomeFantasia.getText();
-        int tel = new Integer(this.jTextFieldTelefone.getText());
-        String razaoSocial = this.jTextFieldRazaoSocial.getText();
-
-        String rua = this.jTextFieldRua.getText();
-        int num = new Integer(this.jTextFieldNumero.getText());
-        String bairro = this.jTextFieldBairro.getText();
-        String cidade = this.jTextFieldCidade.getText();
-        int cep = new Integer(this.jTextFieldCEP.getText());
-
-        ((MainView) MainView.getFrames()[0]).fornecedores.add(new PessoaJuridico(cnpj, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
-        this.setVisible(false);
+//        int id = new Integer(this.jTextFieldID.getText());
+//        int cnpj = new Integer(this.jTextFieldCNPJ.getText());
+//        String nome = this.jTextFieldNomeFantasia.getText();
+//        int tel = new Integer(this.jTextFieldTelefone.getText());
+//        String razaoSocial = this.jTextFieldRazaoSocial.getText();
+//
+//        String rua = this.jTextFieldRua.getText();
+//        int num = new Integer(this.jTextFieldNumero.getText());
+//        String bairro = this.jTextFieldBairro.getText();
+//        String cidade = this.jTextFieldCidade.getText();
+//        int cep = new Integer(this.jTextFieldCEP.getText());
+//
+//        ((MainView) MainView.getFrames()[0]).fornecedores.add(new PessoaJuridico(cnpj, nome, new Endereco(rua, num, bairro, cidade, cep), tel, razaoSocial));
+//        this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        this.setjTextFieldsEnable();
-        this.setjButtonSalvarModificacaoTrue();
+//        this.setjTextFieldsEnable();
+//        this.setjButtonSalvarModificacaoTrue();
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
@@ -339,13 +339,13 @@ public class FCadastroFornecedor extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        boolean resp=false;
-        for (int i=0; i<((MainView) MainView.getFrames()[0]).compras.size();i++ ){
-            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).compras.get(i).getFornecedor().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getFornecedor().getNome());
-        }
-        if(resp==false){
-            ((MainView) MainView.getFrames()[0]).fornecedores.remove(pessoa);
-        }
+//        boolean resp=false;
+//        for (int i=0; i<((MainView) MainView.getFrames()[0]).compras.size();i++ ){
+//            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).compras.get(i).getFornecedor().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).compras.get(i).getFornecedor().getNome());
+//        }
+//        if(resp==false){
+//            ((MainView) MainView.getFrames()[0]).fornecedores.remove(pessoa);
+//        }
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void setjTextFieldBairro(String bairro) {
@@ -388,52 +388,58 @@ public class FCadastroFornecedor extends AbsViewCadastroPessoa {
         this.jTextFieldRazaoSocial.setText(razaoSocial);
     }
 
-    public void setjButtonSalvarFalse() {
-        this.jButtonSalvar.setVisible(false);
+    public JTextField getjTextFieldRazaoSocial() {
+        return jTextFieldRazaoSocial;
     }
-
-    public void setjButtonSalvarModificacaoTrue() {
-        this.jButtonSalvarModificacao.setVisible(true);
-    }
-
-    public void setjButtonSalvarModificacaoFalse() {
-        this.jButtonSalvarModificacao.setVisible(false);
-    }
-
-    public void setjButtonEditarFalse() {
-        this.jButtonEditar.setVisible(false);
-    }
-    public void setjButtonExcluirFalse() {
-        this.jButtonExcluir.setVisible(false);
-    }
-
-    public void setjTextFieldsUnable() {
-        this.jTextFieldID.setEditable(false);
-        this.jTextFieldNomeFantasia.setEditable(false);
-        this.jTextFieldBairro.setEditable(false);
-        this.jTextFieldCEP.setEditable(false);
-        this.jTextFieldCNPJ.setEditable(false);
-        this.jTextFieldCidade.setEditable(false);
-        this.jTextFieldNumero.setEditable(false);
-        this.jTextFieldRua.setEditable(false);
-        this.jTextFieldTelefone.setEditable(false);
-        this.jTextFieldRazaoSocial.setEditable(false);
-
-    }
-
-    public void setjTextFieldsEnable() {
-        this.jTextFieldID.setEditable(true);
-        this.jTextFieldNomeFantasia.setEditable(true);
-        this.jTextFieldBairro.setEditable(true);
-        this.jTextFieldCEP.setEditable(true);
-        this.jTextFieldCNPJ.setEditable(true);
-        this.jTextFieldCidade.setEditable(true);
-        this.jTextFieldNumero.setEditable(true);
-        this.jTextFieldRua.setEditable(true);
-        this.jTextFieldTelefone.setEditable(true);
-        this.jTextFieldRazaoSocial.setEditable(true);
-    }
-
+    
+    
+//
+//    public void setjButtonSalvarFalse() {
+//        this.jButtonSalvar.setVisible(false);
+//    }
+//
+//    public void setjButtonSalvarModificacaoTrue() {
+//        this.jButtonSalvarModificacao.setVisible(true);
+//    }
+//
+//    public void setjButtonSalvarModificacaoFalse() {
+//        this.jButtonSalvarModificacao.setVisible(false);
+//    }
+//
+//    public void setjButtonEditarFalse() {
+//        this.jButtonEditar.setVisible(false);
+//    }
+//    public void setjButtonExcluirFalse() {
+//        this.jButtonExcluir.setVisible(false);
+//    }
+//
+//    public void setjTextFieldsUnable() {
+//        this.jTextFieldID.setEditable(false);
+//        this.jTextFieldNomeFantasia.setEditable(false);
+//        this.jTextFieldBairro.setEditable(false);
+//        this.jTextFieldCEP.setEditable(false);
+//        this.jTextFieldCNPJ.setEditable(false);
+//        this.jTextFieldCidade.setEditable(false);
+//        this.jTextFieldNumero.setEditable(false);
+//        this.jTextFieldRua.setEditable(false);
+//        this.jTextFieldTelefone.setEditable(false);
+//        this.jTextFieldRazaoSocial.setEditable(false);
+//
+//    }
+//
+//    public void setjTextFieldsEnable() {
+//        this.jTextFieldID.setEditable(true);
+//        this.jTextFieldNomeFantasia.setEditable(true);
+//        this.jTextFieldBairro.setEditable(true);
+//        this.jTextFieldCEP.setEditable(true);
+//        this.jTextFieldCNPJ.setEditable(true);
+//        this.jTextFieldCidade.setEditable(true);
+//        this.jTextFieldNumero.setEditable(true);
+//        this.jTextFieldRua.setEditable(true);
+//        this.jTextFieldTelefone.setEditable(true);
+//        this.jTextFieldRazaoSocial.setEditable(true);
+//    }
+//
     public void setPessoa(PessoaJuridico pessoa) {
         this.pessoa = pessoa;
     }
@@ -537,4 +543,9 @@ public class FCadastroFornecedor extends AbsViewCadastroPessoa {
     private javax.swing.JTextField jTextFieldRua;
     private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public JLabel getjLabelID() {
+        return jLabelID;
+    }
 }

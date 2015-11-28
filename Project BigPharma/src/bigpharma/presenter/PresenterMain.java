@@ -37,6 +37,7 @@ public class PresenterMain {
 //    public ArrayList<Venda> vendas = new ArrayList();
 //    public ArrayList<PessoaJuridico> fornecedores = new ArrayList();
 //    public ArrayList<PessoaFisico> funcionarios = new ArrayList();
+    
     public MainView main = new MainView();
     public IState state;
 
@@ -78,6 +79,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroPessoaFisica objCadastro = new FCadastroPessoaFisica();
+                        PresenterCadastroPessoaFisica cadastro = new PresenterCadastroPessoaFisica(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                          state=new Cadastrando();
                          state.cadastrandoPessoa(objCadastro);
@@ -91,6 +93,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroFornecedor objCadastro = new FCadastroFornecedor();
+                        PresenterCadastroPessoaJuridica cadastro = new PresenterCadastroPessoaJuridica(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                         state = new Cadastrando();
                         state.cadastrandoPessoa(objCadastro);
@@ -104,6 +107,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroCompra objCadastro = new FCadastroCompra();
+                        PresenterCadastroCompra cadastro = new PresenterCadastroCompra(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                         carrega(true, objCadastro);
                     }
@@ -115,6 +119,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroVenda objCadastro = new FCadastroVenda();
+                        PresenterCadastroVenda cadastro = new PresenterCadastroVenda(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                         carrega(true, objCadastro);
                     }
@@ -126,6 +131,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroProduto objCadastro = new FCadastroProduto();
+                        PresenterCadastroProduto cadastro = new PresenterCadastroProduto(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                         state = new Cadastrando();
                         state.cadastrandoItem(objCadastro);
@@ -165,6 +171,7 @@ public class PresenterMain {
                     public void actionPerformed(ActionEvent e
                     ) {
                         FCadastroFuncionario objCadastro = new FCadastroFuncionario();
+                        PresenterCadastroPessoaFisica cadastro = new PresenterCadastroPessoaFisica(objCadastro);
                         main.getjDesktopPane().add(objCadastro);
                          state=new Cadastrando();
                          state.cadastrandoPessoa(objCadastro);
@@ -190,7 +197,7 @@ public class PresenterMain {
                     @Override
                     public void actionPerformed(ActionEvent e
                     ) {
-                        upgrade();
+                        //upgrade();
                     }
                 });
         
@@ -199,7 +206,7 @@ public class PresenterMain {
                     @Override
                     public void actionPerformed(ActionEvent e
                     ) {
-                        update();
+                        //update();
                     }
                 });
         
@@ -218,25 +225,25 @@ public class PresenterMain {
         janela.setVisible(b);
     }
     
-    public void update() {
-        Serializador s = new Serializador();
-        main.produtos = s.deserializaProdutos();
-        main.clientes = s.deserializaClientes();
-        main.funcionarios = s.deserializaFuncionarios();
-        main.fornecedores = s.deserializaFornecedores();
-        main.compras = s.deserializaCompras();
-        main.vendas = s.deserializaVendas();
-    }
-    
-    public void upgrade() {
-        Serializador s = new Serializador();
-        s.serializaProdutos(main.produtos);
-        s.serializaClientes(main.clientes);
-        s.serializaCompras(main.compras);
-        s.serializaFornecedores(main.fornecedores);
-        s.serializaFuncionarios(main.funcionarios);
-        s.serializaProdutos(main.produtos);
-        s.serializaVendas(main.vendas);
-    }
+//    public void update() {
+//        Serializador s = new Serializador();
+//        main.produtos = s.deserializaProdutos();
+//        main.clientes = s.deserializaClientes();
+//        main.funcionarios = s.deserializaFuncionarios();
+//        main.fornecedores = s.deserializaFornecedores();
+//        main.compras = s.deserializaCompras();
+//        main.vendas = s.deserializaVendas();
+//    }
+//    
+//    public void upgrade() {
+//        Serializador s = new Serializador();
+//        s.serializaProdutos(main.produtos);
+//        s.serializaClientes(main.clientes);
+//        s.serializaCompras(main.compras);
+//        s.serializaFornecedores(main.fornecedores);
+//        s.serializaFuncionarios(main.funcionarios);
+//        s.serializaProdutos(main.produtos);
+//        s.serializaVendas(main.vendas);
+//    }
     
 }

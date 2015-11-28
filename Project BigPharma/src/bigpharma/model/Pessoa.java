@@ -5,7 +5,7 @@
  */
 package bigpharma.model;
 
-import Composite.IPessoa;
+import bigpharma.composite.IPessoa;
 import java.io.Serializable;
 
 /**

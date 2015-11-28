@@ -6,8 +6,9 @@
 package bigpharma.view;
 
 import bigpharma.model.PessoaFisico;
-import bigpharma.model.Endereco;
+
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -277,19 +278,19 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        int id = new Integer(this.jTextFieldID.getText());
-        int cpf = new Integer(this.jTextFieldCNPJ.getText());
-        String nome = this.jTextFieldNome.getText();
-        int tel = new Integer(this.jTextFieldTelefone.getText());
-
-        String rua = this.jTextFieldRua.getText();
-        int num = new Integer(this.jTextFieldNumero.getText());
-        String bairro = this.jTextFieldBairro.getText();
-        String cidade = this.jTextFieldCidade.getText();
-        int cep = new Integer(this.jTextFieldCEP.getText());
-
-        ((MainView) MainView.getFrames()[0]).funcionarios.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
-        this.setVisible(false);
+//        int id = new Integer(this.jTextFieldID.getText());
+//        int cpf = new Integer(this.jTextFieldCNPJ.getText());
+//        String nome = this.jTextFieldNome.getText();
+//        int tel = new Integer(this.jTextFieldTelefone.getText());
+//
+//        String rua = this.jTextFieldRua.getText();
+//        int num = new Integer(this.jTextFieldNumero.getText());
+//        String bairro = this.jTextFieldBairro.getText();
+//        String cidade = this.jTextFieldCidade.getText();
+//        int cep = new Integer(this.jTextFieldCEP.getText());
+//
+//        ((MainView) MainView.getFrames()[0]).funcionarios.add(new PessoaFisico(cpf, id, nome, new Endereco(rua, num, bairro, cidade, cep), tel));
+//        this.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
@@ -297,8 +298,8 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        this.setjTextFieldsEnable();
-        this.setjButtonSalvarModificacaoTrue();
+//        this.setjTextFieldsEnable();
+//        this.setjButtonSalvarModificacaoTrue();
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
@@ -320,13 +321,13 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSalvarModificacaoActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-       boolean resp=false;
-        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
-            resp=(pessoa.getDocumento()==((MainView) MainView.getFrames()[0]).vendas.get(i).getFuncionario().getDocumento())&&(pessoa.getNome()==((MainView) MainView.getFrames()[0]).vendas.get(i).getFuncionario().getNome());
-        }
-        if(resp==false){
-            ((MainView) MainView.getFrames()[0]).funcionarios.remove(pessoa);
-        }
+//       boolean resp=false;
+//        for (int i=0; i<((MainView) MainView.getFrames()[0]).vendas.size();i++ ){
+//            resp=(pessoa.getDocumento()==((Venda)((MainView) MainView.getFrames()[0]).vendas.get(i)).getFuncionario().getDocumento())&&(pessoa.getNome()==((Venda)((MainView) MainView.getFrames()[0]).vendas.get(i)).getFuncionario().getNome());
+//        }
+//        if(resp==false){
+//            ((MainView) MainView.getFrames()[0]).funcionarios.remove(pessoa);
+//        }
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void setjTextFieldBairro(String bairro) {
@@ -364,52 +365,52 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
     public void setjTextFieldTelefone(int tel) {
         this.jTextFieldTelefone.setText(Integer.toString(tel));
     }
-
-    public void setjButtonSalvarFalse() {
-        this.jButtonSalvar.setVisible(false);
-    }
-
-    public void setjButtonSalvarModificacaoTrue() {
-        this.jButtonSalvarModificacao.setVisible(true);
-    }
-
-    public void setjButtonSalvarModificacaoFalse() {
-        this.jButtonSalvarModificacao.setVisible(false);
-    }
-
-    public void setjButtonEditarFalse() {
-        this.jButtonEditar.setVisible(false);
-    }
-    
-    public void setjButtonExcluirFalse() {
-        this.jButtonExcluir.setVisible(false);
-    }
-
-    public void setjTextFieldsUnable() {
-        this.jTextFieldID.setEditable(false);
-        this.jTextFieldNome.setEditable(false);
-        this.jTextFieldBairro.setEditable(false);
-        this.jTextFieldCEP.setEditable(false);
-        this.jTextFieldCNPJ.setEditable(false);
-        this.jTextFieldCidade.setEditable(false);
-        this.jTextFieldNumero.setEditable(false);
-        this.jTextFieldRua.setEditable(false);
-        this.jTextFieldTelefone.setEditable(false);
-
-    }
-
-    public void setjTextFieldsEnable() {
-        this.jTextFieldID.setEditable(true);
-        this.jTextFieldNome.setEditable(true);
-        this.jTextFieldBairro.setEditable(true);
-        this.jTextFieldCEP.setEditable(true);
-        this.jTextFieldCNPJ.setEditable(true);
-        this.jTextFieldCidade.setEditable(true);
-        this.jTextFieldNumero.setEditable(true);
-        this.jTextFieldRua.setEditable(true);
-        this.jTextFieldTelefone.setEditable(true);
-    }
-
+//
+//    public void setjButtonSalvarFalse() {
+//        this.jButtonSalvar.setVisible(false);
+//    }
+//
+//    public void setjButtonSalvarModificacaoTrue() {
+//        this.jButtonSalvarModificacao.setVisible(true);
+//    }
+//
+//    public void setjButtonSalvarModificacaoFalse() {
+//        this.jButtonSalvarModificacao.setVisible(false);
+//    }
+//
+//    public void setjButtonEditarFalse() {
+//        this.jButtonEditar.setVisible(false);
+//    }
+//    
+//    public void setjButtonExcluirFalse() {
+//        this.jButtonExcluir.setVisible(false);
+//    }
+//
+//    public void setjTextFieldsUnable() {
+//        this.jTextFieldID.setEditable(false);
+//        this.jTextFieldNome.setEditable(false);
+//        this.jTextFieldBairro.setEditable(false);
+//        this.jTextFieldCEP.setEditable(false);
+//        this.jTextFieldCNPJ.setEditable(false);
+//        this.jTextFieldCidade.setEditable(false);
+//        this.jTextFieldNumero.setEditable(false);
+//        this.jTextFieldRua.setEditable(false);
+//        this.jTextFieldTelefone.setEditable(false);
+//
+//    }
+//
+//    public void setjTextFieldsEnable() {
+//        this.jTextFieldID.setEditable(true);
+//        this.jTextFieldNome.setEditable(true);
+//        this.jTextFieldBairro.setEditable(true);
+//        this.jTextFieldCEP.setEditable(true);
+//        this.jTextFieldCNPJ.setEditable(true);
+//        this.jTextFieldCidade.setEditable(true);
+//        this.jTextFieldNumero.setEditable(true);
+//        this.jTextFieldRua.setEditable(true);
+//        this.jTextFieldTelefone.setEditable(true);
+//    }
+//
     public void setPessoa(PessoaFisico pessoa) {
         this.pessoa = pessoa;
     }
@@ -482,6 +483,12 @@ public class FCadastroFuncionario extends AbsViewCadastroPessoa {
     public JTextField getjTextFieldTelefone() {
         return jTextFieldTelefone;
     }
+
+    @Override
+    public JLabel getjLabelID() {
+        return jLabelID;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

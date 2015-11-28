@@ -5,14 +5,8 @@
  */
 package bigpharma.view;
 
-import bigpharma.model.Pessoa;
-import bigpharma.model.Compra;
-import bigpharma.model.PessoaJuridico;
-import bigpharma.model.PessoaFisico;
-import bigpharma.model.Produto;
-import bigpharma.model.Venda;
+import bigpharma.composite.Lista;
 import bigpharma.presenter.PresenterMain;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
@@ -33,15 +27,23 @@ public class MainView extends javax.swing.JFrame {
         initComponents();
     }
 
-    public ArrayList<Pessoa> clientes = new ArrayList();
-
-    //fornecedores = new ListaPessoaJuridica();
-    public ArrayList<Compra> compras = new ArrayList();
-    public ArrayList<Produto> produtos = new ArrayList();
-    public ArrayList<Venda> vendas = new ArrayList();
-    public ArrayList<PessoaJuridico> fornecedores = new ArrayList();
-    public ArrayList<PessoaFisico> funcionarios = new ArrayList();
-
+    //public ArrayList<Pessoa> clientes = new ArrayList();
+    public Lista clientes = new Lista();
+    
+    //public ArrayList<Compra> compras = new ArrayList();
+    public Lista compras = new Lista();
+    
+    //public ArrayList<Produto> produtos = new ArrayList();
+    public Lista produtos = new Lista();
+    
+    //public ArrayList<Venda> vendas = new ArrayList();
+    public Lista vendas = new Lista();
+    
+    //public ArrayList<PessoaJuridico> fornecedores = new ArrayList();
+    public Lista fornecedores = new Lista();
+    
+    //public ArrayList<PessoaFisico> funcionarios = new ArrayList();
+    public Lista funcionarios = new Lista();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

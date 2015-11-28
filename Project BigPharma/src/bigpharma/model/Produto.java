@@ -5,7 +5,7 @@
  */
 package bigpharma.model;
 
-import Composite.IItem;
+import bigpharma.composite.IItem;
 
 /**
  *

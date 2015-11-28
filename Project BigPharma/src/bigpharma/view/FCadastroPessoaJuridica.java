@@ -7,6 +7,7 @@ package bigpharma.view;
 
 import bigpharma.model.PessoaJuridico;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -294,7 +295,7 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jTextFieldNomeFantasiaActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        this.setVisible(false);
+//        this.setVisible(false);
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
@@ -302,8 +303,8 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
-        this.setjTextFieldsEnable();
-        this.setjButtonSalvarModificacaoTrue();
+//        this.setjTextFieldsEnable();
+//        this.setjButtonSalvarModificacaoTrue();
     }//GEN-LAST:event_jButtonEditarActionPerformed
 
     private void jButtonSalvarModificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarModificacaoActionPerformed
@@ -353,54 +354,54 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
     public void setjTextFieldRazaoSocial(String razaoSocial) {
         this.jTextFieldRazaoSocial.setText(razaoSocial);
     }
-
-    public void setjButtonSalvarFalse() {
-        this.jButtonSalvar.setVisible(false);
-    }
-
-    public void setjButtonSalvarModificacaoTrue() {
-        this.jButtonSalvarModificacao.setVisible(true);
-    }
-
-    public void setjButtonSalvarModificacaoFalse() {
-        this.jButtonSalvarModificacao.setVisible(false);
-    }
-
-    public void setjButtonEditarFalse() {
-        this.jButtonEditar.setVisible(false);
-    }
-
-    public void setjButtonExcluirFalse() {
-        this.jButtonExcluir.setVisible(false);
-    }
-
-    public void setjTextFieldsUnable() {
-        this.jTextFieldID.setEditable(false);
-        this.jTextFieldNomeFantasia.setEditable(false);
-        this.jTextFieldBairro.setEditable(false);
-        this.jTextFieldCEP.setEditable(false);
-        this.jTextFieldCNPJ.setEditable(false);
-        this.jTextFieldCidade.setEditable(false);
-        this.jTextFieldNumero.setEditable(false);
-        this.jTextFieldRua.setEditable(false);
-        this.jTextFieldTelefone.setEditable(false);
-        this.jTextFieldRazaoSocial.setEditable(false);
-
-    }
-
-    public void setjTextFieldsEnable() {
-        this.jTextFieldID.setEditable(true);
-        this.jTextFieldNomeFantasia.setEditable(true);
-        this.jTextFieldBairro.setEditable(true);
-        this.jTextFieldCEP.setEditable(true);
-        this.jTextFieldCNPJ.setEditable(true);
-        this.jTextFieldCidade.setEditable(true);
-        this.jTextFieldNumero.setEditable(true);
-        this.jTextFieldRua.setEditable(true);
-        this.jTextFieldTelefone.setEditable(true);
-        this.jTextFieldRazaoSocial.setEditable(true);
-    }
-
+//
+//    public void setjButtonSalvarFalse() {
+//        this.jButtonSalvar.setVisible(false);
+//    }
+//
+//    public void setjButtonSalvarModificacaoTrue() {
+//        this.jButtonSalvarModificacao.setVisible(true);
+//    }
+//
+//    public void setjButtonSalvarModificacaoFalse() {
+//        this.jButtonSalvarModificacao.setVisible(false);
+//    }
+//
+//    public void setjButtonEditarFalse() {
+//        this.jButtonEditar.setVisible(false);
+//    }
+//
+//    public void setjButtonExcluirFalse() {
+//        this.jButtonExcluir.setVisible(false);
+//    }
+//
+//    public void setjTextFieldsUnable() {
+//        this.jTextFieldID.setEditable(false);
+//        this.jTextFieldNomeFantasia.setEditable(false);
+//        this.jTextFieldBairro.setEditable(false);
+//        this.jTextFieldCEP.setEditable(false);
+//        this.jTextFieldCNPJ.setEditable(false);
+//        this.jTextFieldCidade.setEditable(false);
+//        this.jTextFieldNumero.setEditable(false);
+//        this.jTextFieldRua.setEditable(false);
+//        this.jTextFieldTelefone.setEditable(false);
+//        this.jTextFieldRazaoSocial.setEditable(false);
+//
+//    }
+//
+//    public void setjTextFieldsEnable() {
+//        this.jTextFieldID.setEditable(true);
+//        this.jTextFieldNomeFantasia.setEditable(true);
+//        this.jTextFieldBairro.setEditable(true);
+//        this.jTextFieldCEP.setEditable(true);
+//        this.jTextFieldCNPJ.setEditable(true);
+//        this.jTextFieldCidade.setEditable(true);
+//        this.jTextFieldNumero.setEditable(true);
+//        this.jTextFieldRua.setEditable(true);
+//        this.jTextFieldTelefone.setEditable(true);
+//        this.jTextFieldRazaoSocial.setEditable(true);
+//    }
+//
     public void setPessoa(PessoaJuridico pessoa) {
         this.pessoa = pessoa;
     }
@@ -476,6 +477,11 @@ public class FCadastroPessoaJuridica extends AbsViewCadastroPessoa {
 
     public JTextField getjTextFieldRazaoSocial() {
         return jTextFieldRazaoSocial;
+    }
+
+    @Override
+    public JLabel getjLabelID() {
+        return jLabelID;
     }
     
     

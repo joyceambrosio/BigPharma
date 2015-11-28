@@ -5,6 +5,8 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.AbsModel;
+import bigpharma.model.Pessoa;
 import bigpharma.model.PessoaFisico;
 import javax.swing.JOptionPane;
 
@@ -149,32 +151,32 @@ public class FConsultaFuncionario extends javax.swing.JInternalFrame {
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
 
-        PessoaFisico newFuncionario = null;
+        AbsModel newFuncionario = null;
         if (!((MainView) MainView.getFrames()[0]).funcionarios.isEmpty()) {
             for (int i = 0; i <= ((MainView) MainView.getFrames()[0]).funcionarios.size(); i++) {
 
                 newFuncionario = ((MainView) MainView.getFrames()[0]).funcionarios.get(i);
-                boolean resp = newFuncionario.getNome().equals(this.jTextFieldNome.getText());
+                boolean resp = ((Pessoa)newFuncionario).getNome().equals(this.jTextFieldNome.getText());
 
-                if (resp && (newFuncionario.getDocumento() == (new Integer(this.jTextFieldCNPJ.getText())))) {
+                if (resp && (((Pessoa)newFuncionario).getDocumento() == (new Integer(this.jTextFieldCNPJ.getText())))) {
                     i = ((MainView) MainView.getFrames()[0]).funcionarios.size() + 1;
                 }
 
             }
 
-            objCadastro.setjTextFieldNome(newFuncionario.getNome());
+            objCadastro.setjTextFieldNome(((Pessoa)newFuncionario).getNome());
             objCadastro.setjTextFieldID(newFuncionario.getId());
-            objCadastro.setjTextFieldCNPJ(newFuncionario.getDocumento());
-            objCadastro.setjTextFieldTelefone(newFuncionario.getTelefone());
-            objCadastro.setjTextFieldRua(newFuncionario.getEndereco().getRua());
-            objCadastro.setjTextFieldNumero(newFuncionario.getEndereco().getNum());
-            objCadastro.setjTextFieldBairro(newFuncionario.getEndereco().getBairro());
-            objCadastro.setjTextFieldCidade(newFuncionario.getEndereco().getCidade());
-            objCadastro.setjTextFieldCEP(newFuncionario.getEndereco().getCep());
+            objCadastro.setjTextFieldCNPJ(((Pessoa)newFuncionario).getDocumento());
+            objCadastro.setjTextFieldTelefone(((Pessoa)newFuncionario).getTelefone());
+            objCadastro.setjTextFieldRua(((Pessoa)newFuncionario).getEndereco().getRua());
+            objCadastro.setjTextFieldNumero(((Pessoa)newFuncionario).getEndereco().getNum());
+            objCadastro.setjTextFieldBairro(((Pessoa)newFuncionario).getEndereco().getBairro());
+            objCadastro.setjTextFieldCidade(((Pessoa)newFuncionario).getEndereco().getCidade());
+            objCadastro.setjTextFieldCEP(((Pessoa)newFuncionario).getEndereco().getCep());
 
-            objCadastro.setjTextFieldsUnable();
-            objCadastro.setjButtonSalvarFalse();
-            objCadastro.setjButtonSalvarModificacaoFalse();
+//            objCadastro.setjTextFieldsUnable();
+//            objCadastro.setjButtonSalvarFalse();
+//            objCadastro.setjButtonSalvarModificacaoFalse();
 
             objCadastro.setPessoa((PessoaFisico) newFuncionario);
             objCadastro.setVisible(true);

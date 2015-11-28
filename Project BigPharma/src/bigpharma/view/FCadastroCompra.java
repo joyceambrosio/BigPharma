@@ -5,10 +5,12 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.AbsModel;
 import bigpharma.model.Compra;
 import bigpharma.model.Pessoa;
 import bigpharma.model.Produto;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -74,7 +76,8 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
         jLabelCliente.setText("Fornecedor");
 
         jComboBoxFornecedor.setModel(new javax.swing.DefaultComboBoxModel());
-        for (Pessoa fornecedor:  ((MainView) MainView.getFrames()[0]).fornecedores){
+        ArrayList<AbsModel> fornecedores = ((MainView) MainView.getFrames()[0]).fornecedores.getAll();
+        for (AbsModel fornecedor: fornecedores){
             if(((DefaultComboBoxModel)jComboBoxFornecedor.getModel()).getIndexOf(fornecedor) == -1 )
             jComboBoxFornecedor.addItem(fornecedor);
         }
@@ -158,7 +161,8 @@ public class FCadastroCompra extends AbsViewCadastroTransacao {
         jScrollPane1.setViewportView(jTableProdutos);
 
         jComboBoxProduto.setModel(new javax.swing.DefaultComboBoxModel());
-        for (Produto produto:  ((MainView) MainView.getFrames()[0]).produtos){
+        ArrayList<AbsModel> produtos = ((MainView) MainView.getFrames()[0]).produtos.getAll();
+        for (AbsModel produto: produtos){
             if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )
             jComboBoxProduto.addItem(produto);
         }

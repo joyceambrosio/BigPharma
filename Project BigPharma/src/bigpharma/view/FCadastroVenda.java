@@ -5,11 +5,13 @@
  */
 package bigpharma.view;
 
+import bigpharma.model.AbsModel;
 import bigpharma.model.Pessoa;
 import bigpharma.model.PessoaFisico;
 import bigpharma.model.Produto;
 import bigpharma.model.Venda;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
@@ -78,7 +80,8 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         setToolTipText("");
 
         jComboBoxFuncionario.setModel(new javax.swing.DefaultComboBoxModel());
-        for (Pessoa funcionario:  ((MainView) MainView.getFrames()[0]).funcionarios){
+        ArrayList<AbsModel> funcionarios = ((MainView) MainView.getFrames()[0]).funcionarios.getAll();
+        for (AbsModel funcionario: funcionarios){
             if(((DefaultComboBoxModel)jComboBoxFuncionario.getModel()).getIndexOf(funcionario) == -1 )
             jComboBoxFuncionario.addItem(funcionario);
         }
@@ -88,7 +91,8 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         jLabelCliente.setText("Cliente");
 
         jComboBoxCliente.setModel(new javax.swing.DefaultComboBoxModel());
-        for (Pessoa cliente:  ((MainView) MainView.getFrames()[0]).clientes){
+        ArrayList<AbsModel> clientes = ((MainView) MainView.getFrames()[0]).clientes.getAll();
+        for (AbsModel cliente:  clientes){
             if(((DefaultComboBoxModel)jComboBoxCliente.getModel()).getIndexOf(cliente) == -1 )
             jComboBoxCliente.addItem(cliente);
         }
@@ -189,7 +193,8 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         }
 
         jComboBoxProduto.setModel(new javax.swing.DefaultComboBoxModel());
-        for (Produto produto:  ((MainView) MainView.getFrames()[0]).produtos){
+        ArrayList<AbsModel> produtos = ((MainView) MainView.getFrames()[0]).produtos.getAll();
+        for (AbsModel produto:  produtos){
             if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )
             jComboBoxProduto.addItem(produto);
         }
@@ -342,10 +347,6 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonSairActionPerformed
 
-    private void jComboBoxProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxProdutoActionPerformed
-
     private void jButtonAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarProdutoActionPerformed
         
     }//GEN-LAST:event_jButtonAdicionarProdutoActionPerformed
@@ -367,6 +368,10 @@ public class FCadastroVenda extends AbsViewCadastroTransacao {
         PessoaFisico funcionario = (PessoaFisico) jComboBoxCliente.getSelectedItem();
         venda.setFuncionario(funcionario);
     }//GEN-LAST:event_jButtonFuncionarioActionPerformed
+
+    private void jComboBoxProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxProdutoActionPerformed
 
     @Override
     public JButton getjButtonSalvar() {

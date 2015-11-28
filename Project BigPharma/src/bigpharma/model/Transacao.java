@@ -5,7 +5,7 @@
  */
 package bigpharma.model;
 
-import Composite.ITransacao;
+import bigpharma.composite.ITransacao;
 import java.util.ArrayList;
 
 /**

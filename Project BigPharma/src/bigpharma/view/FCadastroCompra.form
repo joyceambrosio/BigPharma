@@ -97,7 +97,7 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBoxFornecedor">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="for (Pessoa fornecedor:  ((MainView) MainView.getFrames()[0]).fornecedores){&#xa;    if(((DefaultComboBoxModel)jComboBoxFornecedor.getModel()).getIndexOf(fornecedor) == -1 )&#xa;        jComboBoxFornecedor.addItem(fornecedor);&#xa;}">
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="ArrayList&lt;AbsModel&gt; fornecedores = ((MainView) MainView.getFrames()[0]).fornecedores.getAll();&#xa;for (AbsModel fornecedor: fornecedores){&#xa;    if(((DefaultComboBoxModel)jComboBoxFornecedor.getModel()).getIndexOf(fornecedor) == -1 )&#xa;        jComboBoxFornecedor.addItem(fornecedor);&#xa;}">
               <Connection code="new javax.swing.DefaultComboBoxModel()" type="code"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -243,7 +243,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxProdutoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="for (Produto produto:  ((MainView) MainView.getFrames()[0]).produtos){&#xa;        if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )&#xa;            jComboBoxProduto.addItem(produto);&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ArrayList&lt;AbsModel&gt; produtos = ((MainView) MainView.getFrames()[0]).produtos.getAll();&#xa;for (AbsModel produto: produtos){&#xa;        if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )&#xa;            jComboBoxProduto.addItem(produto);&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelProduto">

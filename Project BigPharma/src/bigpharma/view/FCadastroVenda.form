@@ -116,7 +116,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="for (Pessoa funcionario:  ((MainView) MainView.getFrames()[0]).funcionarios){&#xa;        if(((DefaultComboBoxModel)jComboBoxFuncionario.getModel()).getIndexOf(funcionario) == -1 )&#xa;            jComboBoxFuncionario.addItem(funcionario);&#xa;    }"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ArrayList&lt;AbsModel&gt; funcionarios = ((MainView) MainView.getFrames()[0]).funcionarios.getAll();&#xa;for (AbsModel funcionario: funcionarios){&#xa;        if(((DefaultComboBoxModel)jComboBoxFuncionario.getModel()).getIndexOf(funcionario) == -1 )&#xa;            jComboBoxFuncionario.addItem(funcionario);&#xa;    }"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelVendedor">
@@ -136,7 +136,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="for (Pessoa cliente:  ((MainView) MainView.getFrames()[0]).clientes){&#xa;    if(((DefaultComboBoxModel)jComboBoxCliente.getModel()).getIndexOf(cliente) == -1 )&#xa;        jComboBoxCliente.addItem(cliente);&#xa;}&#xa;jComboBoxCliente.setToolTipText(&quot;&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ArrayList&lt;AbsModel&gt; clientes = ((MainView) MainView.getFrames()[0]).clientes.getAll();&#xa;for (AbsModel cliente:  clientes){&#xa;    if(((DefaultComboBoxModel)jComboBoxCliente.getModel()).getIndexOf(cliente) == -1 )&#xa;        jComboBoxCliente.addItem(cliente);&#xa;}&#xa;jComboBoxCliente.setToolTipText(&quot;&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldDataCompra">
@@ -293,7 +293,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxProdutoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="for (Produto produto:  ((MainView) MainView.getFrames()[0]).produtos){&#xa;        if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )&#xa;            jComboBoxProduto.addItem(produto);&#xa;}"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ArrayList&lt;AbsModel&gt; produtos = ((MainView) MainView.getFrames()[0]).produtos.getAll();&#xa;for (AbsModel produto:  produtos){&#xa;        if(((DefaultComboBoxModel)jComboBoxProduto.getModel()).getIndexOf(produto) == -1 )&#xa;            jComboBoxProduto.addItem(produto);&#xa;}"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelProduto">
